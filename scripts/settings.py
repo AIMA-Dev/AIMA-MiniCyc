@@ -78,3 +78,21 @@ class Settings:
                     if s == setting:
                         return value
         return None
+    
+    def does_setting_exist(self, setting):
+        """
+        Checks if a setting exists in the settings file.
+
+        Args:
+            setting (str): The name of the setting.
+
+        Returns:
+            bool: True if the setting exists, False otherwise.
+        """
+        if os.path.exists(self.file_path):
+            with open(self.file_path, "r") as file:
+                for line in file:
+                    s, _ = line.strip().split(" = ")
+                    if s == setting:
+                        return True
+        return False

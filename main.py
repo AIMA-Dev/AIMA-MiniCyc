@@ -19,8 +19,26 @@ if __name__ == "__main__":
     MainWindow.showFullScreen()
     MainWindow.showMaximized()
     
-    # Settings
+    # Load Settings
     settings = Settings()
+    ## Log Frequency
+    spinBox_logFrequency = MainWindow.findChild(QtWidgets.QSpinBox, "spinBox_logFrequency")
+    if not settings.does_setting_exist('logFrequency'):
+        settings.write_to_settings_file('logFrequency', spinBox_logFrequency.value())
+    else:
+        spinBox_logFrequency.setValue(int(settings.read_from_settings_file('logFrequency')))
+    ## File Size Limit
+    spinBox_fileSizeLimit = MainWindow.findChild(QtWidgets.QSpinBox, "spinBox_fileSizeLimit")
+    if not settings.does_setting_exist('fileSizeLimit'):
+        settings.write_to_settings_file('fileSizeLimit', spinBox_fileSizeLimit.value())
+    else:
+        spinBox_fileSizeLimit.setValue(int(settings.read_from_settings_file('fileSizeLimit')))
+    ## Log On/Off
+    pushButton_LogOnOff = MainWindow.findChild(QtWidgets.QPushButton, "pushButton_LogOnOff")
+    if not settings.does_setting_exist('logOnOff'):
+        settings.write_to_settings_file('logOnOff', pushButton_LogOnOff.isChecked())
+    else:
+        pushButton_LogOnOff.setChecked(bool(settings.read_from_settings_file('logOnOff')))
     
     # Logger
     timer = QTimer()
@@ -34,6 +52,6 @@ if __name__ == "__main__":
     timer.start()
     
     # Serial Link
-    print("List of avaible ports : ",list_available_ports())
+    print("List of avaible ports : ", list_available_ports())
         
     sys.exit(app.exec())

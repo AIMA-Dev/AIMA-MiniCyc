@@ -18,7 +18,7 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
 from PySide6.QtWidgets import (QAbstractSpinBox, QApplication, QDial, QFrame,
     QLCDNumber, QLabel, QMainWindow, QMenuBar,
     QProgressBar, QPushButton, QRadioButton, QSizePolicy,
-    QSpinBox, QStatusBar, QTabWidget, QToolButton,
+    QSpinBox, QStatusBar, QTabWidget, QTextBrowser,
     QWidget)
 import Injection_rc
 
@@ -315,12 +315,6 @@ class Ui_MainWindow(object):
         self.label_43 = QLabel(self.frame)
         self.label_43.setObjectName(u"label_43")
         self.label_43.setGeometry(QRect(10, 10, 99, 16))
-        self.toolButton = QToolButton(self.frame)
-        self.toolButton.setObjectName(u"toolButton")
-        self.toolButton.setGeometry(QRect(10, 30, 351, 31))
-        self.toolButton.setPopupMode(QToolButton.ToolButtonPopupMode.InstantPopup)
-        self.toolButton.setToolButtonStyle(Qt.ToolButtonStyle.ToolButtonIconOnly)
-        self.toolButton.setArrowType(Qt.ArrowType.NoArrow)
         self.numInput_14 = QWidget(self.frame)
         self.numInput_14.setObjectName(u"numInput_14")
         self.numInput_14.setGeometry(QRect(10, 70, 149, 61))
@@ -331,6 +325,7 @@ class Ui_MainWindow(object):
         self.spinBox_logFrequency.setObjectName(u"spinBox_logFrequency")
         self.spinBox_logFrequency.setGeometry(QRect(0, 20, 121, 41))
         self.spinBox_logFrequency.setButtonSymbols(QAbstractSpinBox.ButtonSymbols.UpDownArrows)
+        self.spinBox_logFrequency.setMinimum(1)
         self.label_57 = QLabel(self.numInput_14)
         self.label_57.setObjectName(u"label_57")
         self.label_57.setGeometry(QRect(130, 40, 19, 16))
@@ -351,10 +346,15 @@ class Ui_MainWindow(object):
         self.label_44 = QLabel(self.frame)
         self.label_44.setObjectName(u"label_44")
         self.label_44.setGeometry(QRect(10, 210, 197, 16))
-        self.pushButton_logOnOff = QPushButton(self.frame)
-        self.pushButton_logOnOff.setObjectName(u"pushButton_logOnOff")
-        self.pushButton_logOnOff.setGeometry(QRect(10, 230, 75, 24))
-        self.pushButton_logOnOff.setCheckable(True)
+        self.pushButton_LogOnOff = QPushButton(self.frame)
+        self.pushButton_LogOnOff.setObjectName(u"pushButton_LogOnOff")
+        self.pushButton_LogOnOff.setGeometry(QRect(10, 230, 75, 24))
+        self.pushButton_LogOnOff.setCheckable(True)
+        self.pushButton_LogOnOff.setChecked(True)
+        self.textBrowser = QTextBrowser(self.frame)
+        self.textBrowser.setObjectName(u"textBrowser")
+        self.textBrowser.setGeometry(QRect(10, 30, 351, 31))
+        self.textBrowser.setFrameShape(QFrame.Shape.Box)
         self.label = QLabel(self.widget)
         self.label.setObjectName(u"label")
         self.label.setGeometry(QRect(0, 0, 161, 16))
@@ -420,13 +420,12 @@ class Ui_MainWindow(object):
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.Vide), QCoreApplication.translate("MainWindow", u"Vide", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.Eau), QCoreApplication.translate("MainWindow", u"Eau", None))
         self.label_43.setText(QCoreApplication.translate("MainWindow", u"Chemin du dossier", None))
-        self.toolButton.setText(QCoreApplication.translate("MainWindow", u"...", None))
         self.label_56.setText(QCoreApplication.translate("MainWindow", u"Fr\u00e9quence d'enregistrement", None))
         self.label_57.setText(QCoreApplication.translate("MainWindow", u"Sec", None))
         self.label_52.setText(QCoreApplication.translate("MainWindow", u"Limite de taille par fichiers", None))
         self.label_55.setText(QCoreApplication.translate("MainWindow", u"Mb", None))
         self.label_44.setText(QCoreApplication.translate("MainWindow", u"Activer l'enregistrement des donn\u00e9es", None))
-        self.pushButton_logOnOff.setText(QCoreApplication.translate("MainWindow", u"On", None))
+        self.pushButton_LogOnOff.setText(QCoreApplication.translate("MainWindow", u"On", None))
         self.label.setText(QCoreApplication.translate("MainWindow", u"Enregistrement des donn\u00e9es", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.Paramtres), QCoreApplication.translate("MainWindow", u"Param\u00e8tres", None))
     # retranslateUi
