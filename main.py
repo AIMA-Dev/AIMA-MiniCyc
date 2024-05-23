@@ -1,7 +1,9 @@
 import sys
 from PySide6 import QtCore, QtWidgets, QtGui, QtUiTools
 from PySide6.QtCore import QTimer
+# from scripts.settings import
 from scripts.logger import log_values
+from scripts.serialLink import list_available_ports
 
 def loadUiWidget(uifilename, parent=None):
     loader = QtUiTools.QUiLoader()
@@ -17,11 +19,20 @@ if __name__ == "__main__":
     MainWindow.showFullScreen()
     MainWindow.showMaximized()
     
+    # Settings
+    
     # Logger
     timer = QTimer()
-    timer.setInterval(500)
+    spinBox_logFrequency = MainWindow.findChild(QtWidgets.QSpinBox, "spinBox_logFrequency")
+    logFrequencyInMB = spinBox_logFrequency.value() * 1000
+    timer.setInterval(logFrequencyInMB)
     values_to_log = [1, 2, 3]
-    timer.timeout.connect(log_values(values_to_log, 100))
+    spinBox_fileSizeLimit = MainWindow.findChild(QtWidgets.QSpinBox, "spinBox_fileSizeLimit")
+    fileSizeLimit = spinBox_fileSizeLimit.value()
+    timer.timeout.connect(log_values(values_to_log, fileSizeLimit))
     timer.start()
     
+    # Serial Link
+    print("List of avaible ports : ",list_available_ports())
+        
     sys.exit(app.exec())
