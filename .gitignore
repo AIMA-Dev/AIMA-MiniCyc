@@ -21,3 +21,6 @@
 
 # Python
 __pycache__/
+
+# Settings
+settings.conf
