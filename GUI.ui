@@ -1133,6 +1133,9 @@
          <property name="buttonSymbols">
           <enum>QAbstractSpinBox::ButtonSymbols::UpDownArrows</enum>
          </property>
+         <property name="minimum">
+          <number>1</number>
+         </property>
         </widget>
         <widget class="QLabel" name="label_55">
          <property name="geometry">

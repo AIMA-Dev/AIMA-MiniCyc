@@ -344,6 +344,7 @@ class Ui_MainWindow(object):
         self.spinBox_fileSizeLimit.setObjectName(u"spinBox_fileSizeLimit")
         self.spinBox_fileSizeLimit.setGeometry(QRect(0, 20, 121, 41))
         self.spinBox_fileSizeLimit.setButtonSymbols(QAbstractSpinBox.ButtonSymbols.UpDownArrows)
+        self.spinBox_fileSizeLimit.setMinimum(1)
         self.label_55 = QLabel(self.numInput_13)
         self.label_55.setObjectName(u"label_55")
         self.label_55.setGeometry(QRect(130, 40, 18, 16))
