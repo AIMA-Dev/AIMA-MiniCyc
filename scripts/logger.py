@@ -6,6 +6,16 @@ path = './logs/'
 header = ['Title1', 'Title2', 'Title3']
 
 def log_values(values, max_size_mb):
+    """
+    Logs the given values to a file.
+
+    Parameters:
+    - values (list): The values to be logged.
+    - max_size_mb (int): The maximum size of the log file in megabytes.
+
+    Returns:
+    None
+    """
     directory = create_folder()
     if check_file_size(directory, max_size_mb):
         file_path = add_csv_file(directory)
@@ -16,6 +26,12 @@ def log_values(values, max_size_mb):
     write_values(file_path, values)
 
 def create_folder():
+    """
+    Creates a folder with the current date as the name.
+
+    Returns:
+        str: The path of the created folder.
+    """
     today = datetime.date.today()
     folder_name = today.strftime("%Y-%m-%d")
     folder_path = os.path.join(path, folder_name)
@@ -26,6 +42,15 @@ def create_folder():
     return folder_path
 
 def add_csv_file(directory):
+    """
+    Creates a new CSV file in the specified directory with a unique name.
+    
+    Args:
+        directory (str): The directory where the CSV file should be created.
+        
+    Returns:
+        str: The path of the newly created CSV file.
+    """
     file_name = "1"
     file_path = os.path.join(directory, file_name + ".csv")
     count = 1
@@ -42,11 +67,31 @@ def add_csv_file(directory):
     return file_path
 
 def write_values(file_path, values):
+    """
+    Appends a row of values to a CSV file.
+
+    Args:
+        file_path (str): The path to the CSV file.
+        values (list): The list of values to be written as a row.
+
+    Returns:
+        None
+    """
     with open(file_path, 'a', newline='') as file:
         writer = csv.writer(file)
         writer.writerow(values)
 
 def check_file_size(directory, max_size_mb):
+    """
+    Check if the size of the latest file in the given directory exceeds the maximum size.
+
+    Args:
+        directory (str): The directory path to check for files.
+        max_size_mb (float): The maximum file size in megabytes.
+
+    Returns:
+        bool: True if the size of the latest file is greater than the maximum size, False otherwise.
+    """
     if not os.listdir(directory):
         return True
     
@@ -57,6 +102,15 @@ def check_file_size(directory, max_size_mb):
     return file_size_mb > max_size_mb
 
 def get_latest_file(directory):
+    """
+    Returns the name of the latest file in the specified directory.
+
+    Args:
+        directory (str): The directory path.
+
+    Returns:
+        str: The name of the latest file in the directory, or None if the directory is empty.
+    """
     files = os.listdir(directory)
     if not files:
         return None

@@ -19,7 +19,6 @@ def read_data(ser):
 
     return data
 
-
 def list_available_ports():
     ports = serial.tools.list_ports.comports()
     available_ports = []
