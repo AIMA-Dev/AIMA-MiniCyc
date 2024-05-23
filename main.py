@@ -1,7 +1,7 @@
 import sys
 from PySide6 import QtCore, QtWidgets, QtGui, QtUiTools
 from PySide6.QtCore import QTimer
-# from scripts.settings import
+from scripts.settings import Settings
 from scripts.logger import log_values
 from scripts.serialLink import list_available_ports
 
@@ -20,6 +20,7 @@ if __name__ == "__main__":
     MainWindow.showMaximized()
     
     # Settings
+    settings = Settings()
     
     # Logger
     timer = QTimer()
