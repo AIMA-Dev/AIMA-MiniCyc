@@ -2,49 +2,63 @@ import csv
 import os
 import datetime
 
-def write_to_csv(path, values):
-    """
-    Writes the given values to a CSV file located at the specified path.
+path = './logs/'
+header = ['Title1', 'Title2', 'Title3']
+
+def log_values(values, max_size_mb):
+    directory = create_folder()
+    if check_file_size(directory, max_size_mb):
+        file_path = add_csv_file(directory)
+    else:
+        latest_file = get_latest_file(directory)
+        file_path = os.path.join(directory, latest_file)
     
-    If the file does not exist, it creates a new file and writes the header 'Value' as the first row.
-    If the file already exists, it appends the values as new rows.
+    write_values(file_path, values)
+
+def create_folder():
+    today = datetime.date.today()
+    folder_name = today.strftime("%Y-%m-%d")
+    folder_path = os.path.join(path, folder_name)
     
-    Args:
-        path (str): The path to the CSV file.
-        values (list): A list of values to be written to the CSV file.
-    """
-    if not os.path.exists(path):
-        with open(path, 'w', newline='') as file:
-            writer = csv.writer(file)
-            writer.writerow(['Value'])
+    if not os.path.exists(folder_path):
+        os.makedirs(folder_path)
+    
+    return folder_path
 
-    with open(path, 'a', newline='') as file:
-        writer = csv.writer(file)
-        for value in values:
-            writer.writerow([value])
-
-
-def create_file_with_date(path):
-    """
-    Creates a new file with the current date as the file name in the specified path.
-    If a file with the same name already exists, it appends a count number to the file name.
-
-    Args:
-        path (str): The path where the file should be created.
-
-    Returns:
-        None
-    """
-    date = datetime.datetime.now().strftime("%Y-%m-%d")
-    file_name = f"{date}.csv"
-    file_path = os.path.join(path, file_name)
-
+def add_csv_file(directory):
+    file_name = "1"
+    file_path = os.path.join(directory, file_name + ".csv")
     count = 1
+    
     while os.path.exists(file_path):
         count += 1
-        file_name = f"{date}_{count}.csv"
-        file_path = os.path.join(path, file_name)
-
+        file_name = str(count)
+        file_path = os.path.join(directory, file_name + ".csv")
+    
     with open(file_path, 'w', newline='') as file:
         writer = csv.writer(file)
-        writer.writerow(['Value'])
+        writer.writerow(header)
+        
+    return file_path
+
+def write_values(file_path, values):
+    with open(file_path, 'a', newline='') as file:
+        writer = csv.writer(file)
+        writer.writerow(values)
+
+def check_file_size(directory, max_size_mb):
+    if not os.listdir(directory):
+        return True
+    
+    latest_file = get_latest_file(directory)
+    file_path = os.path.join(directory, latest_file)
+    file_size_mb = os.path.getsize(file_path) / (1024 * 1024)  # Convert to MB
+    
+    return file_size_mb > max_size_mb
+
+def get_latest_file(directory):
+    files = os.listdir(directory)
+    if not files:
+        return None
+    latest_file = max(files, key=lambda x: os.path.getctime(os.path.join(directory, x)))
+    return latest_file

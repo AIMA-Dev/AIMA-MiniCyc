@@ -1,7 +1,7 @@
 import sys
 from PySide6 import QtCore, QtWidgets, QtGui, QtUiTools
 from PySide6.QtCore import QTimer
-from scripts.logger import write_to_csv
+from scripts.logger import log_values
 
 def loadUiWidget(uifilename, parent=None):
     loader = QtUiTools.QUiLoader()
@@ -21,7 +21,7 @@ if __name__ == "__main__":
     timer = QTimer()
     timer.setInterval(500)
     values_to_log = [1, 2, 3]
-    timer.timeout.connect(write_to_csv('./logs/', values_to_log))
+    timer.timeout.connect(log_values(values_to_log, 100))
     timer.start()
     
     sys.exit(app.exec())
