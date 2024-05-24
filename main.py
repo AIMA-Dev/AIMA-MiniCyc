@@ -8,6 +8,17 @@ from scripts.serialLink import list_available_ports
 
 
 def loadUiWidget(uifilename, parent=None):
+    """
+    Loads a UI file and returns the corresponding widget.
+
+    Parameters:
+    - uifilename (str): The path to the UI file.
+    - parent (QWidget): The parent widget (default: None).
+
+    Returns:
+    - QWidget: The loaded widget.
+
+    """
     loader = QtUiTools.QUiLoader()
     uifile = QtCore.QFile(uifilename)
     uifile.open(QtCore.QFile.ReadOnly)
@@ -17,6 +28,16 @@ def loadUiWidget(uifilename, parent=None):
 
 
 def load_settings(MainWindow):
+    """
+    Loads the settings for the application.
+
+    Parameters:
+    - MainWindow: The main window of the application.
+
+    Returns:
+    None
+    """
+
     # Log path
     label_logPath = MainWindow.findChild(
         QtWidgets.QLabel, "label_logPath")
@@ -58,6 +79,15 @@ def load_settings(MainWindow):
 
 
 def bind_settings(MainWindow):
+    """
+    Binds the settings of the MainWindow to the corresponding UI elements.
+
+    Args:
+        MainWindow: The main window object.
+
+    Returns:
+        None
+    """
     # Log Frequency
     spinBox_logFrequency = MainWindow.findChild(
         QtWidgets.QSpinBox, "spinBox_logFrequency")
@@ -79,6 +109,19 @@ def bind_settings(MainWindow):
         lambda: pushButton_LogOnOff.setText(settings.read_from_settings_file('logOnOff')))
 
 def refresh_ports():
+    """
+    Refreshes the list of available ports in the GUI.
+
+    This function clears the existing list of ports in the GUI, retrieves the updated list of available ports,
+    and populates the GUI list with the new ports. If no ports are detected, a message indicating that no ports
+    were found is displayed in the GUI.
+
+    Args:
+        None
+
+    Returns:
+        None
+    """
     listWidget_PortList = MainWindow.findChild(
         QtWidgets.QListView, "listWidget_PortList")
     listWidget_PortList.clear()
