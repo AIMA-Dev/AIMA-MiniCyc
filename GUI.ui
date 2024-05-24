@@ -26,6 +26,9 @@
       <height>1080</height>
      </rect>
     </property>
+    <property name="tabShape">
+     <enum>QTabWidget::TabShape::Rounded</enum>
+    </property>
     <property name="currentIndex">
      <number>6</number>
     </property>
@@ -996,7 +999,7 @@
        <rect>
         <x>20</x>
         <y>20</y>
-        <width>371</width>
+        <width>621</width>
         <height>284</height>
        </rect>
       </property>
@@ -1005,7 +1008,7 @@
         <rect>
          <x>0</x>
          <y>20</y>
-         <width>371</width>
+         <width>621</width>
          <height>264</height>
         </rect>
        </property>
@@ -1164,17 +1167,42 @@
          <bool>true</bool>
         </property>
        </widget>
-       <widget class="QTextBrowser" name="textBrowser">
+       <widget class="QTextBrowser" name="textBrowser_logPath">
         <property name="geometry">
          <rect>
           <x>10</x>
           <y>30</y>
-          <width>351</width>
+          <width>601</width>
           <height>31</height>
          </rect>
         </property>
         <property name="frameShape">
          <enum>QFrame::Shape::Box</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Shadow::Sunken</enum>
+        </property>
+        <property name="horizontalScrollBarPolicy">
+         <enum>Qt::ScrollBarPolicy::ScrollBarAsNeeded</enum>
+        </property>
+        <property name="documentTitle">
+         <string/>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_logPath">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>40</y>
+          <width>581</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Path</string>
+        </property>
+        <property name="scaledContents">
+         <bool>false</bool>
         </property>
        </widget>
       </widget>
@@ -1189,6 +1217,90 @@
        </property>
        <property name="text">
         <string>Enregistrement des données</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="widget_2" native="true">
+      <property name="geometry">
+       <rect>
+        <x>700</x>
+        <y>20</y>
+        <width>381</width>
+        <height>284</height>
+       </rect>
+      </property>
+      <widget class="QFrame" name="frame_5">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>20</y>
+         <width>381</width>
+         <height>264</height>
+        </rect>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::Shape::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Shadow::Raised</enum>
+       </property>
+       <widget class="QLabel" name="label_51">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>10</y>
+          <width>171</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Ports disponibles</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_Refresh">
+        <property name="geometry">
+         <rect>
+          <x>280</x>
+          <y>30</y>
+          <width>75</width>
+          <height>24</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Rafraichir</string>
+        </property>
+        <property name="checkable">
+         <bool>false</bool>
+        </property>
+        <property name="checked">
+         <bool>false</bool>
+        </property>
+       </widget>
+       <widget class="QListWidget" name="listWidget_PortList">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>31</y>
+          <width>211</width>
+          <height>221</height>
+         </rect>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::Shape::Box</enum>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QLabel" name="label_22">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>161</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Ports série</string>
        </property>
       </widget>
      </widget>
