@@ -17,9 +17,9 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QAbstractSpinBox, QApplication, QDial, QFrame,
     QLCDNumber, QLabel, QListWidget, QListWidgetItem,
-    QMainWindow, QMenuBar, QProgressBar, QPushButton,
-    QRadioButton, QSizePolicy, QSpinBox, QStatusBar,
-    QTabWidget, QTextBrowser, QWidget)
+    QMainWindow, QProgressBar, QPushButton, QRadioButton,
+    QSizePolicy, QSpinBox, QStatusBar, QTabWidget,
+    QTextBrowser, QWidget)
 import Injection_rc
 
 class Ui_MainWindow(object):
@@ -367,10 +367,10 @@ class Ui_MainWindow(object):
         self.label.setGeometry(QRect(0, 0, 161, 16))
         self.widget_2 = QWidget(self.Paramtres)
         self.widget_2.setObjectName(u"widget_2")
-        self.widget_2.setGeometry(QRect(700, 20, 381, 284))
+        self.widget_2.setGeometry(QRect(700, 20, 621, 284))
         self.frame_5 = QFrame(self.widget_2)
         self.frame_5.setObjectName(u"frame_5")
-        self.frame_5.setGeometry(QRect(0, 20, 381, 264))
+        self.frame_5.setGeometry(QRect(0, 20, 621, 264))
         self.frame_5.setFrameShape(QFrame.Shape.StyledPanel)
         self.frame_5.setFrameShadow(QFrame.Shadow.Raised)
         self.label_51 = QLabel(self.frame_5)
@@ -378,12 +378,12 @@ class Ui_MainWindow(object):
         self.label_51.setGeometry(QRect(10, 10, 171, 16))
         self.pushButton_Refresh = QPushButton(self.frame_5)
         self.pushButton_Refresh.setObjectName(u"pushButton_Refresh")
-        self.pushButton_Refresh.setGeometry(QRect(280, 30, 75, 24))
+        self.pushButton_Refresh.setGeometry(QRect(510, 30, 80, 24))
         self.pushButton_Refresh.setCheckable(False)
         self.pushButton_Refresh.setChecked(False)
         self.listWidget_PortList = QListWidget(self.frame_5)
         self.listWidget_PortList.setObjectName(u"listWidget_PortList")
-        self.listWidget_PortList.setGeometry(QRect(10, 31, 211, 221))
+        self.listWidget_PortList.setGeometry(QRect(10, 31, 481, 221))
         self.listWidget_PortList.setFrameShape(QFrame.Shape.Box)
         self.label_22 = QLabel(self.widget_2)
         self.label_22.setObjectName(u"label_22")
@@ -391,10 +391,6 @@ class Ui_MainWindow(object):
         icon = QIcon(QIcon.fromTheme(u"applications-development"))
         self.tabWidget.addTab(self.Paramtres, icon, "")
         MainWindow.setCentralWidget(self.centralwidget)
-        self.menubar = QMenuBar(MainWindow)
-        self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 1920, 33))
-        MainWindow.setMenuBar(self.menubar)
         self.statusbar = QStatusBar(MainWindow)
         self.statusbar.setObjectName(u"statusbar")
         MainWindow.setStatusBar(self.statusbar)
@@ -461,7 +457,7 @@ class Ui_MainWindow(object):
         self.label.setText(QCoreApplication.translate("MainWindow", u"Enregistrement des donn\u00e9es", None))
         self.label_51.setText(QCoreApplication.translate("MainWindow", u"Ports disponibles", None))
         self.pushButton_Refresh.setText(QCoreApplication.translate("MainWindow", u"Rafraichir", None))
-        self.label_22.setText(QCoreApplication.translate("MainWindow", u"Ports s\u00e9rie", None))
+        self.label_22.setText(QCoreApplication.translate("MainWindow", u"Appareils connect\u00e9s", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.Paramtres), QCoreApplication.translate("MainWindow", u"Param\u00e8tres", None))
     # retranslateUi
 
