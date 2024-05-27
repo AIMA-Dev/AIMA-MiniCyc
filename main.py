@@ -4,7 +4,7 @@ from PySide6 import QtCore, QtWidgets, QtGui, QtUiTools
 from PySide6.QtCore import QTimer
 from scripts.settings import Settings
 from scripts.logger import log_values
-from scripts.serialLink import list_available_ports
+from scripts.devicesLink import list_available_ports
 
 
 def loadUiWidget(uifilename, parent=None):
