@@ -130,7 +130,7 @@ def refresh_ports():
     ports = list_available_ports() 
     if not ports:
         listWidget_PortList.clear()
-        item = QtWidgets.QListWidgetItem("No ports detected")
+        item = QtWidgets.QListWidgetItem("No device detected")
         listWidget_PortList.addItem(item)
     else:
         listWidget_PortList.clear()

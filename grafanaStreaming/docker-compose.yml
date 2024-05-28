@@ -1,0 +1,27 @@
+name: aima-minicyc
+
+services:
+  grafana:
+    image: grafana/grafana:latest
+    ports:
+      - "3000:3000"
+    volumes:
+      - grafana-storage:/var/lib/grafana
+      - ./datasources:/etc/grafana/provisioning/datasources
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+      - GF_INSTALL_PLUGINS=marcusolsson-csv-datasource
+    depends_on:
+      - csv_server
+
+  csv_server:
+    image: python:3.8-slim
+    working_dir: /app
+    command: python -m http.server 8000
+    volumes:
+      - ./datas:/app
+    ports:
+      - "8000:8000"
+
+volumes:
+  grafana-storage:
