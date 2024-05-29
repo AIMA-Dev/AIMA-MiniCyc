@@ -3,7 +3,7 @@ import sys
 from PySide6 import QtCore, QtWidgets, QtGui, QtUiTools
 from PySide6.QtCore import QTimer
 from scripts.settings import Settings
-from scripts.logger import log_values
+from scripts.logger import log_values, log_action
 from scripts.devicesLink import list_available_ports
 
 
@@ -107,6 +107,8 @@ def bind_settings(MainWindow):
         lambda: settings.write_to_settings_file('logOnOff', pushButton_LogOnOff.isChecked()))
     pushButton_LogOnOff.clicked.connect(
         lambda: pushButton_LogOnOff.setText(settings.read_from_settings_file('logOnOff')))
+    pushButton_LogOnOff.clicked.connect(
+        lambda: log_action("Logging is turned on" if pushButton_LogOnOff.isChecked() else "Logging is turned off"))
 
 def refresh_ports():
     """

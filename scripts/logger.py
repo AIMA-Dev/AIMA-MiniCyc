@@ -5,6 +5,22 @@ import datetime
 path = './logs/'
 header = ['Title1', 'Title2', 'Title3']
 
+def log_action(action):
+    """
+    Logs the given action to a file.
+
+    Parameters:
+    - action (str): The action to be logged.
+
+    Returns:
+    None
+    """
+    directory = create_folder()
+    file_path = os.path.join(directory, 'actions.txt')
+    with open(file_path, 'a') as file:
+        current_time = datetime.datetime.now().strftime("%H:%M:%S")
+        file.write(f"[{current_time}] - {action}\n")
+
 def log_values(values, max_size_mb):
     """
     Logs the given values to a file.
