@@ -18,9 +18,11 @@
 
 # Logs
 *.csv
+*.txt
 
 # Python
 __pycache__/
 
 # Settings
 settings.conf
+
