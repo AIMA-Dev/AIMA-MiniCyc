@@ -110,6 +110,7 @@ def bind_settings(MainWindow):
     pushButton_LogOnOff.clicked.connect(
         lambda: log_action("Logging is turned on" if pushButton_LogOnOff.isChecked() else "Logging is turned off"))
 
+
 def refresh_ports():
     """
     Refreshes the list of available ports in the GUI.
@@ -129,7 +130,7 @@ def refresh_ports():
     listWidget_PortList.clear()
     item = QtWidgets.QListWidgetItem("Refreshing...")
     listWidget_PortList.addItem(item)
-    ports = list_available_ports() 
+    ports = list_available_ports()
     if not ports:
         listWidget_PortList.clear()
         item = QtWidgets.QListWidgetItem("No device detected")
@@ -140,11 +141,17 @@ def refresh_ports():
             item = QtWidgets.QListWidgetItem(port)
             listWidget_PortList.addItem(item)
 
+
 if __name__ == "__main__":
     app = QtWidgets.QApplication([])
     MainWindow = loadUiWidget("GUI.ui")
     MainWindow.showFullScreen()
     MainWindow.showMaximized()
+
+    # Resize tabWidget to screen size in width and 95% of screen size in height
+    tabWidget = MainWindow.findChild(QtWidgets.QTabWidget, "tabWidget")
+    tabWidget.resize(QtWidgets.QApplication.primaryScreen().availableSize())
+    tabWidget.resize(MainWindow.width(), int(QtWidgets.QApplication.primaryScreen().availableSize().height() * 0.95))
 
     # Settings
     settings = Settings()
@@ -169,5 +176,5 @@ if __name__ == "__main__":
     pushButton_Refresh = MainWindow.findChild(
         QtWidgets.QPushButton, "pushButton_Refresh")
     pushButton_Refresh.clicked.connect(refresh_ports)
-    
+
     sys.exit(app.exec())
