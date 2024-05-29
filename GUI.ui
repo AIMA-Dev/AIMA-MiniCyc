@@ -482,7 +482,7 @@
          <string>Cible 2</string>
         </property>
        </widget>
-       <widget class="QRadioButton" name="radioButton">
+       <widget class="QRadioButton" name="radioButton_C1S1">
         <property name="geometry">
          <rect>
           <x>10</x>
@@ -495,7 +495,7 @@
          <string>Stripper 1</string>
         </property>
        </widget>
-       <widget class="QRadioButton" name="radioButton_2">
+       <widget class="QRadioButton" name="radioButton_C1S2">
         <property name="geometry">
          <rect>
           <x>10</x>
@@ -508,7 +508,7 @@
          <string>Stripper 2</string>
         </property>
        </widget>
-       <widget class="QRadioButton" name="radioButton_5">
+       <widget class="QRadioButton" name="radioButton_C1S3">
         <property name="geometry">
          <rect>
           <x>10</x>
@@ -625,7 +625,7 @@
          </property>
         </widget>
        </widget>
-       <widget class="QRadioButton" name="radioButton_6">
+       <widget class="QRadioButton" name="radioButton_C2S1">
         <property name="geometry">
          <rect>
           <x>300</x>
@@ -638,7 +638,7 @@
          <string>Stripper 1</string>
         </property>
        </widget>
-       <widget class="QRadioButton" name="radioButton_7">
+       <widget class="QRadioButton" name="radioButton_C2S2">
         <property name="geometry">
          <rect>
           <x>300</x>
@@ -651,7 +651,7 @@
          <string>Stripper 2</string>
         </property>
        </widget>
-       <widget class="QRadioButton" name="radioButton_8">
+       <widget class="QRadioButton" name="radioButton_C2S3">
         <property name="geometry">
          <rect>
           <x>300</x>
