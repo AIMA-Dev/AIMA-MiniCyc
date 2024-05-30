@@ -27,7 +27,7 @@ def log_values(values, max_size_mb):
 
     Parameters:
     - values (list): The values to be logged.
-    - max_size_mb (int): The maximum size of the log file in megabytes.
+    - max_size_mb (int): The maximum size of the log file in MB.
 
     Returns:
     None
