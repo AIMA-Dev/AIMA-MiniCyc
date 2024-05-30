@@ -178,3 +178,4 @@ if __name__ == "__main__":
     pushButton_Refresh.clicked.connect(refresh_ports)
 
     sys.exit(app.exec())
+# Développé avec ❤️ par : www.noasecond.com.

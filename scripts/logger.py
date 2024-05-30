@@ -132,3 +132,4 @@ def get_latest_file(directory):
         return None
     latest_file = max(files, key=lambda x: os.path.getctime(os.path.join(directory, x)))
     return latest_file
+# Développé avec ❤️ par : www.noasecond.com.
