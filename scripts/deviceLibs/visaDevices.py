@@ -59,3 +59,4 @@ def QueryCmd(self, cmd):
     if self.echoCmd == 1:
         print(cmd)
     return self.myInstr.query(cmd)
+# Développé avec ❤️ par : www.noasecond.com.
