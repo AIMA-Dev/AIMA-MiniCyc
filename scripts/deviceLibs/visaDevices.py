@@ -25,3 +25,4 @@ def get_visa_list():
         device_info = get_device_info(device)
         device_list.append(device_info + device)
     return device_list
+# Développé avec ❤️ par : www.noasecond.com.
