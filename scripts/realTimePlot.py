@@ -31,3 +31,4 @@ class RealTimePlot:
         layout = QtWidgets.QVBoxLayout()
         layout.addWidget(self.figure.canvas)
         widget.setLayout(layout)
+# Développé avec ❤️ par : www.noasecond.com.
