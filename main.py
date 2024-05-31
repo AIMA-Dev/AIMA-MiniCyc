@@ -170,7 +170,7 @@ if __name__ == "__main__":
     spinBox_fileSizeLimit = MainWindow.findChild(
         QtWidgets.QSpinBox, "spinBox_fileSizeLimit")
     fileSizeLimit = spinBox_fileSizeLimit.value()
-    values_to_log = [datetime.now().strftime("%Y-%m-%d %H:%M:%S"),2,3]
+    values_to_log = [datetime.now().strftime("%H:%M:%S"), 2, 3]
     timer.timeout.connect(log_values(values_to_log, fileSizeLimit))
     timer.start()
 
