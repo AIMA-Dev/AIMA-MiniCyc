@@ -3,7 +3,7 @@ import os
 import datetime
 
 path = './logs/'
-header = ['Title1', 'Title2', 'Title3']
+header = ['Date&Time', 'Title2', 'Title3']
 
 def log_action(action):
     """
