@@ -27,12 +27,13 @@ class Ui_MainWindow(object):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
         MainWindow.resize(1920, 1080)
+        MainWindow.setAutoFillBackground(False)
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.tabWidget = QTabWidget(self.centralwidget)
         self.tabWidget.setObjectName(u"tabWidget")
         self.tabWidget.setEnabled(True)
-        self.tabWidget.setGeometry(QRect(0, 0, 1920, 1080))
+        self.tabWidget.setGeometry(QRect(0, 0, 1891, 821))
         self.tabWidget.setTabShape(QTabWidget.TabShape.Rounded)
         self.tabWidget.setTabsClosable(False)
         self.tabWidget.setTabBarAutoHide(False)
@@ -82,6 +83,10 @@ class Ui_MainWindow(object):
         self.label_3 = QLabel(self.Container_2)
         self.label_3.setObjectName(u"label_3")
         self.label_3.setGeometry(QRect(0, 0, 161, 16))
+        self.listWidget_magnet = QListWidget(self.Aimant)
+        self.listWidget_magnet.setObjectName(u"listWidget_magnet")
+        self.listWidget_magnet.setGeometry(QRect(20, 180, 1221, 521))
+        self.listWidget_magnet.setFrameShape(QFrame.Shape.Box)
         self.tabWidget.addTab(self.Aimant, "")
         self.RF = QWidget()
         self.RF.setObjectName(u"RF")
@@ -299,6 +304,10 @@ class Ui_MainWindow(object):
         self.label_54 = QLabel(self.Container_9)
         self.label_54.setObjectName(u"label_54")
         self.label_54.setGeometry(QRect(0, 0, 161, 16))
+        self.listWidget_vacuum = QListWidget(self.Vide)
+        self.listWidget_vacuum.setObjectName(u"listWidget_vacuum")
+        self.listWidget_vacuum.setGeometry(QRect(20, 250, 1221, 521))
+        self.listWidget_vacuum.setFrameShape(QFrame.Shape.Box)
         self.tabWidget.addTab(self.Vide, "")
         self.Eau = QWidget()
         self.Eau.setObjectName(u"Eau")
@@ -397,7 +406,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.tabWidget.setCurrentIndex(6)
+        self.tabWidget.setCurrentIndex(4)
 
 
         QMetaObject.connectSlotsByName(MainWindow)

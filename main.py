@@ -5,6 +5,7 @@ from PySide6.QtCore import QTimer
 from scripts.settings import Settings
 from scripts.logger import log_values, log_action
 from scripts.devicesLink import list_all_devices
+import scripts.realTimePlot as realTimePlot
 
 
 def loadUiWidget(uifilename, parent=None):
@@ -151,7 +152,8 @@ if __name__ == "__main__":
     # Resize tabWidget to screen size in width and 95% of screen size in height
     tabWidget = MainWindow.findChild(QtWidgets.QTabWidget, "tabWidget")
     tabWidget.resize(QtWidgets.QApplication.primaryScreen().availableSize())
-    tabWidget.resize(MainWindow.width(), int(QtWidgets.QApplication.primaryScreen().availableSize().height() * 0.95))
+    tabWidget.resize(MainWindow.width(), int(
+        QtWidgets.QApplication.primaryScreen().availableSize().height() * 0.95))
 
     # Settings
     settings = Settings()
@@ -164,10 +166,10 @@ if __name__ == "__main__":
         QtWidgets.QSpinBox, "spinBox_logFrequency")
     logFrequencyInMB = spinBox_logFrequency.value() * 1000
     timer.setInterval(logFrequencyInMB)
-    values_to_log = [1, 2, 3]
     spinBox_fileSizeLimit = MainWindow.findChild(
         QtWidgets.QSpinBox, "spinBox_fileSizeLimit")
     fileSizeLimit = spinBox_fileSizeLimit.value()
+    values_to_log = [1, 2, 3]
     timer.timeout.connect(log_values(values_to_log, fileSizeLimit))
     timer.start()
 
@@ -176,6 +178,26 @@ if __name__ == "__main__":
     pushButton_Refresh = MainWindow.findChild(
         QtWidgets.QPushButton, "pushButton_Refresh")
     pushButton_Refresh.clicked.connect(refresh_ports)
+
+    # realTimePlot
+    # Vacuum pump
+    plot1 = realTimePlot.RealTimePlot()
+    plot1.start_animation()
+    figure = plot1.figure
+    listWidget_vacuum = MainWindow.findChild(QtWidgets.QListWidget, "listWidget_vacuum")
+    item = QtWidgets.QListWidgetItem()
+    item.setSizeHint(QtCore.QSize(0, 500))
+    listWidget_vacuum.addItem(item)
+    listWidget_vacuum.setItemWidget(item, figure.canvas)
+    # Magnet
+    plot2 = realTimePlot.RealTimePlot()
+    plot2.start_animation()
+    figure = plot2.figure
+    listWidget_magnet = MainWindow.findChild(QtWidgets.QListWidget, "listWidget_magnet")
+    item = QtWidgets.QListWidgetItem()
+    item.setSizeHint(QtCore.QSize(0, 500))
+    listWidget_magnet.addItem(item)
+    listWidget_magnet.setItemWidget(item, figure.canvas)
 
     sys.exit(app.exec())
 # Développé avec ❤️ par : www.noasecond.com.

@@ -13,6 +13,9 @@
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="autoFillBackground">
+   <bool>false</bool>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QTabWidget" name="tabWidget">
     <property name="enabled">
@@ -22,15 +25,15 @@
      <rect>
       <x>0</x>
       <y>0</y>
-      <width>1920</width>
-      <height>1080</height>
+      <width>1891</width>
+      <height>821</height>
      </rect>
     </property>
     <property name="tabShape">
      <enum>QTabWidget::TabShape::Rounded</enum>
     </property>
     <property name="currentIndex">
-     <number>6</number>
+     <number>4</number>
     </property>
     <property name="tabsClosable">
      <bool>false</bool>
@@ -199,6 +202,19 @@
         <string>Bobine</string>
        </property>
       </widget>
+     </widget>
+     <widget class="QListWidget" name="listWidget_magnet">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>180</y>
+        <width>1221</width>
+        <height>521</height>
+       </rect>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::Shape::Box</enum>
+      </property>
      </widget>
     </widget>
     <widget class="QWidget" name="RF">
@@ -980,6 +996,19 @@
         <string>Vide secondaire</string>
        </property>
       </widget>
+     </widget>
+     <widget class="QListWidget" name="listWidget_vacuum">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>250</y>
+        <width>1221</width>
+        <height>521</height>
+       </rect>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::Shape::Box</enum>
+      </property>
      </widget>
     </widget>
     <widget class="QWidget" name="Eau">
