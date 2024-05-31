@@ -4,6 +4,7 @@ from matplotlib.animation import FuncAnimation
 from random import randrange
 from PyQt5 import QtWidgets
 
+
 class RealTimePlot:
     def __init__(self, title, num_lines=1):
         self.num_lines = num_lines
@@ -21,7 +22,7 @@ class RealTimePlot:
         self.ax.spines['bottom'].set_color('white')
         self.ax.spines['top'].set_color('white')
         self.ax.spines['left'].set_color('white')
-        self.ax.spines['right'].set_color('white')  
+        self.ax.spines['right'].set_color('white')
         self.ax.tick_params(axis='x', colors='white')
         self.ax.tick_params(axis='y', colors='white')
         self.ax.yaxis.label.set_color('white')
@@ -50,15 +51,4 @@ class RealTimePlot:
         layout = QtWidgets.QVBoxLayout()
         layout.addWidget(self.figure.canvas)
         widget.setLayout(layout)
-
-# Example usage
-# plot1 = RealTimePlot("Plot 1", num_lines=2)
-# plot1.start_animation()
-# figure = plot1.figure
-# listWidget_vacuum = MainWindow.findChild(QtWidgets.QListWidget, "listWidget_vacuum")
-# item = QtWidgets.QListWidgetItem()
-# item.setSizeHint(QtCore.QSize(0, 500))
-# listWidget_vacuum.addItem(item)
-# listWidget_vacuum.setItemWidget(item, figure.canvas)
-# Developed with ❤️ by : www.noasecond.com.
 # Développé avec ❤️ par : www.noasecond.com.
