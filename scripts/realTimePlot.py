@@ -61,3 +61,4 @@ class RealTimePlot:
 # listWidget_vacuum.addItem(item)
 # listWidget_vacuum.setItemWidget(item, figure.canvas)
 # Developed with ❤️ by : www.noasecond.com.
+# Développé avec ❤️ par : www.noasecond.com.
