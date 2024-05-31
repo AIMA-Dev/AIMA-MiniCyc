@@ -4,7 +4,7 @@ from PySide6 import QtCore, QtWidgets, QtGui, QtUiTools
 from PySide6.QtCore import QTimer
 from scripts.settings import Settings
 from scripts.logger import log_values, log_action
-from scripts.devicesLink import list_available_ports
+from scripts.devicesLink import list_all_devices
 
 
 def loadUiWidget(uifilename, parent=None):
@@ -130,7 +130,7 @@ def refresh_ports():
     listWidget_PortList.clear()
     item = QtWidgets.QListWidgetItem("Refreshing...")
     listWidget_PortList.addItem(item)
-    ports = list_available_ports()
+    ports = list_all_devices()
     if not ports:
         listWidget_PortList.clear()
         item = QtWidgets.QListWidgetItem("No device detected")
