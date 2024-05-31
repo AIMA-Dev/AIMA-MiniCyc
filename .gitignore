@@ -26,3 +26,6 @@ __pycache__/
 # Settings
 settings.conf
 
+.gitignore
+ah.py
+pico2405APlotStreaming.py

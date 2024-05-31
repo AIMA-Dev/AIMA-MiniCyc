@@ -181,19 +181,21 @@ if __name__ == "__main__":
 
     # realTimePlot
     # Vacuum pump
-    plot1 = realTimePlot.RealTimePlot("Plot 1")
+    plot1 = realTimePlot.RealTimePlot("Plot 1", num_lines=2)
     plot1.start_animation()
     figure = plot1.figure
-    listWidget_vacuum = MainWindow.findChild(QtWidgets.QListWidget, "listWidget_vacuum")
+    listWidget_vacuum = MainWindow.findChild(
+        QtWidgets.QListWidget, "listWidget_vacuum")
     item = QtWidgets.QListWidgetItem()
     item.setSizeHint(QtCore.QSize(0, 500))
     listWidget_vacuum.addItem(item)
     listWidget_vacuum.setItemWidget(item, figure.canvas)
     # Magnet
-    plot2 = realTimePlot.RealTimePlot("Plot 2")
+    plot2 = realTimePlot.RealTimePlot("Plot 2", num_lines=1)
     plot2.start_animation()
     figure = plot2.figure
-    listWidget_magnet = MainWindow.findChild(QtWidgets.QListWidget, "listWidget_magnet")
+    listWidget_magnet = MainWindow.findChild(
+        QtWidgets.QListWidget, "listWidget_magnet")
     item = QtWidgets.QListWidgetItem()
     item.setSizeHint(QtCore.QSize(0, 500))
     listWidget_magnet.addItem(item)
