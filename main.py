@@ -5,6 +5,7 @@ from PySide6.QtCore import QTimer
 from scripts.settings import Settings
 from scripts.logger import log_values, log_action
 from scripts.devicesLink import list_all_devices
+from datetime import datetime
 import scripts.realTimePlot as realTimePlot
 
 
@@ -169,7 +170,7 @@ if __name__ == "__main__":
     spinBox_fileSizeLimit = MainWindow.findChild(
         QtWidgets.QSpinBox, "spinBox_fileSizeLimit")
     fileSizeLimit = spinBox_fileSizeLimit.value()
-    values_to_log = [1, 2, 3]
+    values_to_log = [datetime.now().strftime("%Y-%m-%d %H:%M:%S"),2,3]
     timer.timeout.connect(log_values(values_to_log, fileSizeLimit))
     timer.start()
 
