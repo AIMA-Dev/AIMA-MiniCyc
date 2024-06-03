@@ -1,0 +1,34 @@
+.gitattributes
+.github/workflows/addCopyright.yml
+.github/workflows/codeql.yml
+.gitignore
+AIMA-MiniCyc_en_150.ts
+AIMA-MiniCyc_fr_FR.ts
+GUI.ts
+GUI.ui
+GUI_ui.py
+LICENSE
+LabView/MiniCyc_Controller.lvproj
+LabView/MiniCyc_Controller.vi
+LabView/builds/MiniCyc_Controller/MiniCyc.ini
+README.md
+assets/Bobine.png
+assets/Injection.qrc
+assets/Injection_rc.py
+assets/Schema Eau.png
+assets/Schema Injection.png
+assets/icon.ico
+grafanaStreaming/datasources/datasource.yaml
+grafanaStreaming/docker-compose.yml
+grafanaStreaming/grafana.ini
+main.py
+scripts/deviceLibs/picoDevices.py
+scripts/deviceLibs/serialDevices.py
+scripts/deviceLibs/visaDevices.py
+scripts/devicesLink.py
+scripts/logger.py
+scripts/realTimePlot.py
+scripts/settings.py
+utils/MiniCyc.bat
+utils/addCopyright.py
+utils/requirements.txt
