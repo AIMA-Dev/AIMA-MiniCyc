@@ -40,7 +40,7 @@ IF NOT EXIST "%LocalAppData%\Programs\Python\Python312\python.exe" (
     python-3.12.3-amd64.exe /quiet InstallAllUsers=0 PrependPath=1
     del python-3.12.3-amd64.exe
 ) ELSE (
-    echo Python 3.12.3 64-bits already installed
+    echo Python already installed
 )
 python --version
 
