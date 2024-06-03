@@ -3,7 +3,7 @@ import os
 import datetime
 
 path = './logs/'
-header = ['Time', 'Title2', 'Title3']
+header = ['Time', 'RayonCanneC1', 'RayonCanneC2']
 
 def log_action(action):
     """
@@ -33,12 +33,13 @@ def log_values(values, max_size_mb):
     None
     """
     directory = create_folder()
-    if check_file_size(directory, max_size_mb):
+    if check_csv_file_size(directory, max_size_mb):
         file_path = add_csv_file(directory)
     else:
-        latest_file = get_latest_file(directory)
+        latest_file = get_latest_csv_file(directory)
         file_path = os.path.join(directory, latest_file)
     
+    print(f"Logging values to {file_path}")
     write_values(file_path, values)
 
 def create_folder():
@@ -97,9 +98,9 @@ def write_values(file_path, values):
         writer = csv.writer(file)
         writer.writerow(values)
 
-def check_file_size(directory, max_size_mb):
+def check_csv_file_size(directory, max_size_mb):
     """
-    Check if the size of the latest file in the given directory exceeds the maximum size.
+    Check if the size of the latest CSV file in the given directory exceeds the maximum size.
 
     Args:
         directory (str): The directory path to check for files.
@@ -108,18 +109,20 @@ def check_file_size(directory, max_size_mb):
     Returns:
         bool: True if the size of the latest file is greater than the maximum size, False otherwise.
     """
+    if directory is None:
+        return True
     if not os.listdir(directory):
         return True
     
-    latest_file = get_latest_file(directory)
+    latest_file = get_latest_csv_file(directory)
     file_path = os.path.join(directory, latest_file)
     file_size_mb = os.path.getsize(file_path) / (1024 * 1024)  # Convert to MB
     
     return file_size_mb > max_size_mb
 
-def get_latest_file(directory):
+def get_latest_csv_file(directory):
     """
-    Returns the name of the latest file in the specified directory.
+    Returns the name of the latest CSV file in the specified directory.
 
     Args:
         directory (str): The directory path.
@@ -130,6 +133,16 @@ def get_latest_file(directory):
     files = os.listdir(directory)
     if not files:
         return None
-    latest_file = max(files, key=lambda x: os.path.getctime(os.path.join(directory, x)))
+    latest_file = None
+    latest_time = 0
+
+    for file in files:
+        if file.endswith('.csv'):
+            file_path = os.path.join(directory, file)
+            file_time = os.path.getctime(file_path)
+            if file_time > latest_time:
+                latest_file = file
+                latest_time = file_time
+
     return latest_file
 # Développé avec ❤️ par : www.noasecond.com.

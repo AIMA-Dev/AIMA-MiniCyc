@@ -9,6 +9,7 @@ from scripts.devicesLink import list_all_devices
 from datetime import datetime
 import scripts.realTimePlot as realTimePlot
 
+
 def set_app_user_model_id(app_id):
     """
     Sets the current process explicit AppUserModelID.
@@ -123,8 +124,80 @@ def bind_settings(MainWindow):
         lambda: settings.write_to_settings_file('logOnOff', pushButton_LogOnOff.isChecked()))
     pushButton_LogOnOff.clicked.connect(
         lambda: pushButton_LogOnOff.setText(settings.read_from_settings_file('logOnOff')))
+
+
+def bind_values_to_log(MainWindow):
+    timer = QTimer(MainWindow)
+    spinBox_logFrequency = MainWindow.findChild(QtWidgets.QSpinBox, "spinBox_logFrequency")
+    logFrequencyInMS = spinBox_logFrequency.value() * 1000  # Convert to milliseconds
+    timer.setInterval(logFrequencyInMS)
+
+    spinBox_fileSizeLimit = MainWindow.findChild(QtWidgets.QSpinBox, "spinBox_fileSizeLimit")
+    fileSizeLimit = spinBox_fileSizeLimit.value()
+
+    def log_values_periodically():
+        spinBox_RayonCanneC1 = MainWindow.findChild(QtWidgets.QSpinBox, "spinBox_RayonCanneC1")
+        spinBox_RayonCanneC2 = MainWindow.findChild(QtWidgets.QSpinBox, "spinBox_RayonCanneC2")
+        values_to_log = [
+            datetime.now().strftime("%H:%M:%S"),
+            spinBox_RayonCanneC1.value(),
+            spinBox_RayonCanneC2.value()
+        ]
+        log_values(values_to_log, fileSizeLimit)
+
+    timer.timeout.connect(log_values_periodically)
+    timer.start()
+
+
+def bind_actions_to_log(MainWindow):
+    """
+    Binds actions to log.
+
+    Parameters:
+    - MainWindow: The main window object.
+
+    Returns:
+    None
+    """
+    log_action("Application started")
+    pushButton_LogOnOff = MainWindow.findChild(
+        QtWidgets.QPushButton, "pushButton_LogOnOff")
     pushButton_LogOnOff.clicked.connect(
         lambda: log_action("Logging is turned on" if pushButton_LogOnOff.isChecked() else "Logging is turned off"))
+    pushButton_Diaphragme = MainWindow.findChild(
+        QtWidgets.QPushButton, "pushButton_Diaphragme")
+    pushButton_Diaphragme.clicked.connect(
+        lambda: log_action("Diaphragme is turned on" if pushButton_Diaphragme.isChecked() else "Diaphragme is turned off"))
+    pushButton_Diaphragme.clicked.connect(
+        lambda: pushButton_Diaphragme.setText("On" if pushButton_Diaphragme.isChecked() else "Off"))
+    pushButton_Refresh = MainWindow.findChild(
+        QtWidgets.QPushButton, "pushButton_Refresh")
+    pushButton_Refresh.clicked.connect(
+        lambda: log_action("Ports are refreshed"))
+    radioButton_C1S1 = MainWindow.findChild(
+        QtWidgets.QRadioButton, "radioButton_C1S1")
+    radioButton_C1S1.clicked.connect(
+        lambda: log_action("Cible 1 Stripper 1 is selected"))
+    radioButton_C1S2 = MainWindow.findChild(
+        QtWidgets.QRadioButton, "radioButton_C1S2")
+    radioButton_C1S2.clicked.connect(
+        lambda: log_action("Cible 1 Stripper 2 is selected"))
+    radioButton_C1S3 = MainWindow.findChild(
+        QtWidgets.QRadioButton, "radioButton_C1S3")
+    radioButton_C1S3.clicked.connect(
+        lambda: log_action("Cible 1 Stripper 3 is selected"))
+    radioButton_C2S1 = MainWindow.findChild(
+        QtWidgets.QRadioButton, "radioButton_C2S1")
+    radioButton_C2S1.clicked.connect(
+        lambda: log_action("Cible 2 Stripper 1 is selected"))
+    radioButton_C2S2 = MainWindow.findChild(
+        QtWidgets.QRadioButton, "radioButton_C2S2")
+    radioButton_C2S2.clicked.connect(
+        lambda: log_action("Cible 2 Stripper 2 is selected"))
+    radioButton_C2S3 = MainWindow.findChild(
+        QtWidgets.QRadioButton, "radioButton_C2S3")
+    radioButton_C2S3.clicked.connect(
+        lambda: log_action("Cible 2 Stripper 3 is selected"))
 
 
 def refresh_ports():
@@ -168,11 +241,12 @@ if __name__ == "__main__":
     MainWindow.showFullScreen()
     MainWindow.showMaximized()
 
-    # Resize tabWidget to screen size in width and 95% of screen size in height
+    # Resize tabWidget and set the last tab as the current tab
     tabWidget = MainWindow.findChild(QtWidgets.QTabWidget, "tabWidget")
     tabWidget.resize(QtWidgets.QApplication.primaryScreen().availableSize())
     tabWidget.resize(MainWindow.width(), int(
         QtWidgets.QApplication.primaryScreen().availableSize().height() * 0.95))
+    tabWidget.setCurrentIndex(tabWidget.count() - 1)
 
     # Settings
     settings = Settings()
@@ -180,19 +254,10 @@ if __name__ == "__main__":
     bind_settings(MainWindow)
 
     # Logger
-    timer = QTimer()
-    spinBox_logFrequency = MainWindow.findChild(
-        QtWidgets.QSpinBox, "spinBox_logFrequency")
-    logFrequencyInMB = spinBox_logFrequency.value() * 1000
-    timer.setInterval(logFrequencyInMB)
-    spinBox_fileSizeLimit = MainWindow.findChild(
-        QtWidgets.QSpinBox, "spinBox_fileSizeLimit")
-    fileSizeLimit = spinBox_fileSizeLimit.value()
-    values_to_log = [datetime.now().strftime("%H:%M:%S"), 2, 3]
-    timer.timeout.connect(log_values(values_to_log, fileSizeLimit))
-    timer.start()
+    bind_actions_to_log(MainWindow)
+    bind_values_to_log(MainWindow)
 
-    # Serial Link
+    # Devices
     refresh_ports()
     pushButton_Refresh = MainWindow.findChild(
         QtWidgets.QPushButton, "pushButton_Refresh")
