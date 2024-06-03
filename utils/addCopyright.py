@@ -11,7 +11,8 @@ comments = {
     '.yml': "# {}".format(copyright_comment),
     '.css': "/* {} */".format(copyright_comment),
     '.sql': "-- {}".format(copyright_comment),
-    '.py': "# {}".format(copyright_comment)
+    '.py': "# {}".format(copyright_comment),
+    '.bat': ":: {}".format(copyright_comment),
 }
 
 extensions = tuple(comments.keys())
