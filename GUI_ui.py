@@ -21,6 +21,7 @@ from PySide6.QtWidgets import (QAbstractSpinBox, QApplication, QDial, QFrame,
     QSizePolicy, QSpinBox, QStatusBar, QTabWidget,
     QTextBrowser, QWidget)
 import Injection_rc
+import Eau_rc
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -311,6 +312,10 @@ class Ui_MainWindow(object):
         self.tabWidget.addTab(self.Vide, "")
         self.Eau = QWidget()
         self.Eau.setObjectName(u"Eau")
+        self.label_23 = QLabel(self.Eau)
+        self.label_23.setObjectName(u"label_23")
+        self.label_23.setGeometry(QRect(690, 140, 601, 531))
+        self.label_23.setPixmap(QPixmap(u":/newPrefix/Schema Eau.png"))
         self.tabWidget.addTab(self.Eau, "")
         self.Paramtres = QWidget()
         self.Paramtres.setObjectName(u"Paramtres")
@@ -406,7 +411,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.tabWidget.setCurrentIndex(4)
+        self.tabWidget.setCurrentIndex(6)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -453,6 +458,7 @@ class Ui_MainWindow(object):
         self.label_53.setText(QCoreApplication.translate("MainWindow", u"Vide primaire", None))
         self.label_54.setText(QCoreApplication.translate("MainWindow", u"Vide secondaire", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.Vide), QCoreApplication.translate("MainWindow", u"Vide", None))
+        self.label_23.setText("")
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.Eau), QCoreApplication.translate("MainWindow", u"Eau", None))
         self.label_43.setText(QCoreApplication.translate("MainWindow", u"Chemin du dossier", None))
         self.label_56.setText(QCoreApplication.translate("MainWindow", u"Fr\u00e9quence d'enregistrement", None))

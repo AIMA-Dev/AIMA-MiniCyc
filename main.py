@@ -147,6 +147,9 @@ def refresh_ports():
 if __name__ == "__main__":
     app = QtWidgets.QApplication([])
     MainWindow = loadUiWidget("GUI.ui")
+    MainWindow.setWindowTitle("MiniCyc")
+    app_icon = QtGui.QIcon("assets/icon.ico")
+    app.setWindowIcon(app_icon)
     MainWindow.showFullScreen()
     MainWindow.showMaximized()
 

@@ -33,7 +33,7 @@
      <enum>QTabWidget::TabShape::Rounded</enum>
     </property>
     <property name="currentIndex">
-     <number>4</number>
+     <number>6</number>
     </property>
     <property name="tabsClosable">
      <bool>false</bool>
@@ -1015,6 +1015,22 @@
      <attribute name="title">
       <string>Eau</string>
      </attribute>
+     <widget class="QLabel" name="label_23">
+      <property name="geometry">
+       <rect>
+        <x>690</x>
+        <y>140</y>
+        <width>601</width>
+        <height>531</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="assets/Eau.qrc">:/newPrefix/Schema Eau.png</pixmap>
+      </property>
+     </widget>
     </widget>
     <widget class="QWidget" name="Paramtres">
      <attribute name="icon">
@@ -1340,6 +1356,7 @@
  </widget>
  <resources>
   <include location="assets/Injection.qrc"/>
+  <include location="assets/Eau.qrc"/>
  </resources>
  <connections/>
 </ui>
