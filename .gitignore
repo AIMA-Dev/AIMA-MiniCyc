@@ -18,7 +18,7 @@
 
 # Logs
 *.csv
-*.txt
+logs/*.txt
 
 # Python
 __pycache__/
