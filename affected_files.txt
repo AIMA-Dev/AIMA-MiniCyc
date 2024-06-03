@@ -1,3 +1,1 @@
-MiniCyc.bat
-after_files.txt
-before_files.txt
+affected_files.txt
