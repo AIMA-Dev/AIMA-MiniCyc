@@ -1,0 +1,4 @@
+matplotlib
+PyQt5
+pyvisa
+PySide6
