@@ -37,7 +37,8 @@ def add_comment_to_file(file_path, comment):
             comments['.html'],
             comments['.yml'],
             comments['.css'],
-            comments['.sql']
+            comments['.sql'],
+            comments['.bat'],
         ), '', content)
 
         # Remove trailing empty lines
