@@ -39,7 +39,6 @@ def log_values(values, max_size_mb):
         latest_file = get_latest_csv_file(directory)
         file_path = os.path.join(directory, latest_file)
     
-    print(f"Logging values to {file_path}")
     write_values(file_path, values)
 
 def create_folder():

@@ -131,7 +131,6 @@ def bind_values_to_log(MainWindow):
     spinBox_logFrequency = MainWindow.findChild(QtWidgets.QSpinBox, "spinBox_logFrequency")
     logFrequencyInMS = spinBox_logFrequency.value() * 1000  # Convert to milliseconds
     timer.setInterval(logFrequencyInMS)
-
     spinBox_fileSizeLimit = MainWindow.findChild(QtWidgets.QSpinBox, "spinBox_fileSizeLimit")
     fileSizeLimit = spinBox_fileSizeLimit.value()
 
