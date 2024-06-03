@@ -15,7 +15,7 @@ comments = {
 }
 
 extensions = tuple(comments.keys())
-exclude_dirs = ['logs', '.git', '.github']
+exclude_dirs = ['logs', '.git', '.github', 'assets']
 exclude_files = ['GUI_ui.py', '.gitattributes', '.gitignore']
 
 def should_exclude(file_path):
