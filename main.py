@@ -1,5 +1,6 @@
 import os
 import sys
+import ctypes
 from PySide6 import QtCore, QtWidgets, QtGui, QtUiTools
 from PySide6.QtCore import QTimer
 from scripts.settings import Settings
@@ -7,6 +8,19 @@ from scripts.logger import log_values, log_action
 from scripts.devicesLink import list_all_devices
 from datetime import datetime
 import scripts.realTimePlot as realTimePlot
+
+def set_app_user_model_id(app_id):
+    """
+    Sets the current process explicit AppUserModelID.
+
+    Parameters:
+    - app_id (str): The AppUserModelID to set.
+
+    Returns:
+    None
+    """
+    if os.name == 'nt':
+        ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID(app_id)
 
 
 def loadUiWidget(uifilename, parent=None):
@@ -145,6 +159,7 @@ def refresh_ports():
 
 
 if __name__ == "__main__":
+    set_app_user_model_id("aima.minicyc")
     app = QtWidgets.QApplication([])
     MainWindow = loadUiWidget("GUI.ui")
     MainWindow.setWindowTitle("MiniCyc")
