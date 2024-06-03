@@ -114,6 +114,8 @@ def check_csv_file_size(directory, max_size_mb):
         return True
     
     latest_file = get_latest_csv_file(directory)
+    if latest_file is None:
+        return True
     file_path = os.path.join(directory, latest_file)
     file_size_mb = os.path.getsize(file_path) / (1024 * 1024)  # Convert to MB
     
