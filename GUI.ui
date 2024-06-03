@@ -33,7 +33,7 @@
      <enum>QTabWidget::TabShape::Rounded</enum>
     </property>
     <property name="currentIndex">
-     <number>6</number>
+     <number>3</number>
     </property>
     <property name="tabsClosable">
      <bool>false</bool>
@@ -48,8 +48,8 @@
      <widget class="QLabel" name="label_2">
       <property name="geometry">
        <rect>
-        <x>730</x>
-        <y>260</y>
+        <x>620</x>
+        <y>130</y>
         <width>598</width>
         <height>519</height>
        </rect>
@@ -60,6 +60,136 @@
       <property name="pixmap">
        <pixmap resource="assets/Injection.qrc">:/newPrefix/Schema Injection.png</pixmap>
       </property>
+     </widget>
+     <widget class="QWidget" name="Container_Injection_General" native="true">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>670</y>
+        <width>303</width>
+        <height>111</height>
+       </rect>
+      </property>
+      <widget class="QFrame" name="frame_12">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>20</y>
+         <width>303</width>
+         <height>91</height>
+        </rect>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::Shape::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Shadow::Raised</enum>
+       </property>
+       <widget class="QWidget" name="afficheur_14" native="true">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>10</y>
+          <width>171</width>
+          <height>61</height>
+         </rect>
+        </property>
+        <widget class="QLabel" name="label_37">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>65</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Débit Argon</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_38">
+         <property name="geometry">
+          <rect>
+           <x>130</x>
+           <y>40</y>
+           <width>41</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>ml/min</string>
+         </property>
+        </widget>
+        <widget class="QLCDNumber" name="lcdNumber_14">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>20</y>
+           <width>121</width>
+           <height>41</height>
+          </rect>
+         </property>
+         <property name="smallDecimalPoint">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </widget>
+       <widget class="QWidget" name="afficheur_15" native="true">
+        <property name="geometry">
+         <rect>
+          <x>200</x>
+          <y>30</y>
+          <width>83</width>
+          <height>44</height>
+         </rect>
+        </property>
+        <widget class="QLabel" name="label_39">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>66</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Diaphragme</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_Diaphragme">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>20</y>
+           <width>75</width>
+           <height>24</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>On</string>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </widget>
+      </widget>
+      <widget class="QLabel" name="label_59">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>41</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Général</string>
+       </property>
+      </widget>
      </widget>
     </widget>
     <widget class="QWidget" name="Aimant">
@@ -562,7 +692,7 @@
           <bool>true</bool>
          </property>
         </widget>
-        <widget class="QSpinBox" name="spinBox_4">
+        <widget class="QSpinBox" name="spinBox_RayonCanneC1">
          <property name="geometry">
           <rect>
            <x>0</x>
@@ -585,7 +715,7 @@
           </rect>
          </property>
          <property name="text">
-          <string>µA</string>
+          <string>cm</string>
          </property>
         </widget>
        </widget>
@@ -614,7 +744,7 @@
           <bool>true</bool>
          </property>
         </widget>
-        <widget class="QSpinBox" name="spinBox_5">
+        <widget class="QSpinBox" name="spinBox_RayonCanneC2">
          <property name="geometry">
           <rect>
            <x>0</x>
@@ -637,7 +767,7 @@
           </rect>
          </property>
          <property name="text">
-          <string>µA</string>
+          <string>cm</string>
          </property>
         </widget>
        </widget>
@@ -924,7 +1054,7 @@
        <rect>
         <x>20</x>
         <y>20</y>
-        <width>341</width>
+        <width>381</width>
         <height>111</height>
        </rect>
       </property>
@@ -933,7 +1063,7 @@
         <rect>
          <x>0</x>
          <y>20</y>
-         <width>341</width>
+         <width>381</width>
          <height>91</height>
         </rect>
        </property>
@@ -943,6 +1073,104 @@
        <property name="frameShadow">
         <enum>QFrame::Shadow::Raised</enum>
        </property>
+       <widget class="QWidget" name="afficheur_2" native="true">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>10</y>
+          <width>161</width>
+          <height>61</height>
+         </rect>
+        </property>
+        <widget class="QLabel" name="label_24">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>83</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Sonde 1</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_25">
+         <property name="geometry">
+          <rect>
+           <x>130</x>
+           <y>40</y>
+           <width>31</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>mbar</string>
+         </property>
+        </widget>
+        <widget class="QLCDNumber" name="lcdNumber_2">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>20</y>
+           <width>121</width>
+           <height>41</height>
+          </rect>
+         </property>
+         <property name="smallDecimalPoint">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </widget>
+       <widget class="QWidget" name="afficheur_3" native="true">
+        <property name="geometry">
+         <rect>
+          <x>200</x>
+          <y>10</y>
+          <width>161</width>
+          <height>61</height>
+         </rect>
+        </property>
+        <widget class="QLabel" name="label_28">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>83</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Sonde 2</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_29">
+         <property name="geometry">
+          <rect>
+           <x>130</x>
+           <y>40</y>
+           <width>31</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>mbar</string>
+         </property>
+        </widget>
+        <widget class="QLCDNumber" name="lcdNumber_10">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>20</y>
+           <width>121</width>
+           <height>41</height>
+          </rect>
+         </property>
+         <property name="smallDecimalPoint">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </widget>
       </widget>
       <widget class="QLabel" name="label_53">
        <property name="geometry">
@@ -955,45 +1183,6 @@
        </property>
        <property name="text">
         <string>Vide primaire</string>
-       </property>
-      </widget>
-     </widget>
-     <widget class="QWidget" name="Container_9" native="true">
-      <property name="geometry">
-       <rect>
-        <x>380</x>
-        <y>20</y>
-        <width>341</width>
-        <height>111</height>
-       </rect>
-      </property>
-      <widget class="QFrame" name="frame_10">
-       <property name="geometry">
-        <rect>
-         <x>0</x>
-         <y>20</y>
-         <width>341</width>
-         <height>91</height>
-        </rect>
-       </property>
-       <property name="frameShape">
-        <enum>QFrame::Shape::StyledPanel</enum>
-       </property>
-       <property name="frameShadow">
-        <enum>QFrame::Shadow::Raised</enum>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_54">
-       <property name="geometry">
-        <rect>
-         <x>0</x>
-         <y>0</y>
-         <width>161</width>
-         <height>16</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>Vide secondaire</string>
        </property>
       </widget>
      </widget>
@@ -1010,6 +1199,273 @@
        <enum>QFrame::Shape::Box</enum>
       </property>
      </widget>
+     <widget class="QWidget" name="Container_9" native="true">
+      <property name="geometry">
+       <rect>
+        <x>430</x>
+        <y>20</y>
+        <width>381</width>
+        <height>111</height>
+       </rect>
+      </property>
+      <widget class="QFrame" name="frame_10">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>20</y>
+         <width>381</width>
+         <height>91</height>
+        </rect>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::Shape::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Shadow::Raised</enum>
+       </property>
+       <widget class="QWidget" name="afficheur_10" native="true">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>10</y>
+          <width>161</width>
+          <height>61</height>
+         </rect>
+        </property>
+        <widget class="QLabel" name="label_30">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>83</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Sonde 1</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_31">
+         <property name="geometry">
+          <rect>
+           <x>130</x>
+           <y>40</y>
+           <width>31</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>mbar</string>
+         </property>
+        </widget>
+        <widget class="QLCDNumber" name="lcdNumber_11">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>20</y>
+           <width>121</width>
+           <height>41</height>
+          </rect>
+         </property>
+         <property name="smallDecimalPoint">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </widget>
+       <widget class="QWidget" name="afficheur_11" native="true">
+        <property name="geometry">
+         <rect>
+          <x>200</x>
+          <y>10</y>
+          <width>161</width>
+          <height>61</height>
+         </rect>
+        </property>
+        <widget class="QLabel" name="label_32">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>83</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Sonde 2</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_33">
+         <property name="geometry">
+          <rect>
+           <x>130</x>
+           <y>40</y>
+           <width>31</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>mbar</string>
+         </property>
+        </widget>
+        <widget class="QLCDNumber" name="lcdNumber_12">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>20</y>
+           <width>121</width>
+           <height>41</height>
+          </rect>
+         </property>
+         <property name="smallDecimalPoint">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </widget>
+      </widget>
+      <widget class="QLabel" name="label_54">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>161</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Vide secondaire</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="Container_10" native="true">
+      <property name="geometry">
+       <rect>
+        <x>840</x>
+        <y>20</y>
+        <width>303</width>
+        <height>111</height>
+       </rect>
+      </property>
+      <widget class="QFrame" name="frame_11">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>20</y>
+         <width>303</width>
+         <height>91</height>
+        </rect>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::Shape::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Shadow::Raised</enum>
+       </property>
+       <widget class="QWidget" name="afficheur_12" native="true">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>10</y>
+          <width>161</width>
+          <height>61</height>
+         </rect>
+        </property>
+        <widget class="QLabel" name="label_34">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>83</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Vitesse</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_35">
+         <property name="geometry">
+          <rect>
+           <x>130</x>
+           <y>40</y>
+           <width>22</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>rpm</string>
+         </property>
+        </widget>
+        <widget class="QLCDNumber" name="lcdNumber_13">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>20</y>
+           <width>121</width>
+           <height>41</height>
+          </rect>
+         </property>
+         <property name="smallDecimalPoint">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </widget>
+       <widget class="QWidget" name="afficheur_13" native="true">
+        <property name="geometry">
+         <rect>
+          <x>200</x>
+          <y>30</y>
+          <width>83</width>
+          <height>44</height>
+         </rect>
+        </property>
+        <widget class="QLabel" name="label_36">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>33</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Status</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_LogOnOff_2">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>20</y>
+           <width>75</width>
+           <height>24</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>On</string>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </widget>
+      </widget>
+      <widget class="QLabel" name="label_58">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>161</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Pompe</string>
+       </property>
+      </widget>
+     </widget>
     </widget>
     <widget class="QWidget" name="Eau">
      <attribute name="title">
@@ -1018,8 +1474,8 @@
      <widget class="QLabel" name="label_23">
       <property name="geometry">
        <rect>
-        <x>690</x>
-        <y>140</y>
+        <x>630</x>
+        <y>130</y>
         <width>601</width>
         <height>531</height>
        </rect>
