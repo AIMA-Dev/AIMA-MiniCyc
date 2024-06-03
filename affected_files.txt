@@ -1,1 +1,3 @@
 affected_files.txt
+after_files.txt
+before_files.txt

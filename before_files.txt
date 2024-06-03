@@ -17,6 +17,8 @@ README.md
 affected_files.txt
 after_files.txt
 assets/Bobine.png
+assets/Eau.qrc
+assets/Eau_rc.py
 assets/Injection.qrc
 assets/Injection_rc.py
 assets/Schema Eau.png
