@@ -20,7 +20,7 @@ services:
     working_dir: /app
     command: python -m http.server 8000
     volumes:
-      - ./datas:/app
+      - ../logs:/app
     ports:
       - "8000:8000"
 

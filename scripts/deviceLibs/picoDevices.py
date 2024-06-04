@@ -15,4 +15,18 @@ def get_pico_list():
         device_list.append(
             "PicoScope " + device.variant + " with serial " + device.serial)
     return device_list
-# Développé avec ❤️ par : www.noasecond.com.
+
+def get_pico_values():
+    found = PicoDevice.enumerate()
+    if len(found) == 0:
+        return "No PicoScope devices found."
+    
+    device_id = found[0].device_id
+    device = PicoDevice(device_id)
+    device.open()
+    device.set_channel("C1")
+    device.set_samples(10)
+    device.run()
+    values = device.get_values()
+    device.close()
+    return values

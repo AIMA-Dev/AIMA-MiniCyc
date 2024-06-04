@@ -8,6 +8,7 @@ from scripts.logger import log_values, log_action
 from scripts.devicesLink import list_all_devices
 from datetime import datetime
 import scripts.realTimePlot as realTimePlot
+from scripts.deviceLibs.picoDevices import get_pico_values
 
 
 def set_app_user_model_id(app_id):
@@ -140,7 +141,8 @@ def bind_values_to_log(MainWindow):
         values_to_log = [
             datetime.now().strftime("%H:%M:%S"),
             spinBox_RayonCanneC1.value(),
-            spinBox_RayonCanneC2.value()
+            spinBox_RayonCanneC2.value(),
+            get_pico_values()
         ]
         log_values(values_to_log, fileSizeLimit)
 
