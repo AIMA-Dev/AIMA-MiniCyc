@@ -33,7 +33,7 @@
      <enum>QTabWidget::TabShape::Rounded</enum>
     </property>
     <property name="currentIndex">
-     <number>3</number>
+     <number>0</number>
     </property>
     <property name="tabsClosable">
      <bool>false</bool>
@@ -120,7 +120,7 @@
           <string>ml/min</string>
          </property>
         </widget>
-        <widget class="QLCDNumber" name="lcdNumber_14">
+        <widget class="QLCDNumber" name="lcdNumber_DebitArgon">
          <property name="geometry">
           <rect>
            <x>0</x>
@@ -188,6 +188,393 @@
        </property>
        <property name="text">
         <string>Général</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="Container_5" native="true">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>180</y>
+        <width>471</width>
+        <height>351</height>
+       </rect>
+      </property>
+      <widget class="QFrame" name="frame_6">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>20</y>
+         <width>471</width>
+         <height>331</height>
+        </rect>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::Shape::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Shadow::Raised</enum>
+       </property>
+       <widget class="QLabel" name="label_26">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>10</y>
+          <width>64</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Réglage Arc</string>
+        </property>
+       </widget>
+       <widget class="QRadioButton" name="radioButton_C1S1_2">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>60</y>
+          <width>92</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Tension</string>
+        </property>
+       </widget>
+       <widget class="QRadioButton" name="radioButton_C1S2_2">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>130</y>
+          <width>92</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Courant</string>
+        </property>
+       </widget>
+       <widget class="QWidget" name="afficheur_20" native="true">
+        <property name="geometry">
+         <rect>
+          <x>100</x>
+          <y>120</y>
+          <width>149</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <widget class="QLabel" name="label_66">
+         <property name="geometry">
+          <rect>
+           <x>130</x>
+           <y>10</y>
+           <width>19</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>mA</string>
+         </property>
+        </widget>
+        <widget class="QSpinBox" name="spinBox_RayonCanneC2_3">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>121</width>
+           <height>41</height>
+          </rect>
+         </property>
+         <property name="buttonSymbols">
+          <enum>QAbstractSpinBox::ButtonSymbols::UpDownArrows</enum>
+         </property>
+        </widget>
+       </widget>
+       <widget class="QWidget" name="afficheur_21" native="true">
+        <property name="geometry">
+         <rect>
+          <x>100</x>
+          <y>50</y>
+          <width>149</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <widget class="QLabel" name="label_67">
+         <property name="geometry">
+          <rect>
+           <x>130</x>
+           <y>10</y>
+           <width>19</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>KV</string>
+         </property>
+        </widget>
+        <widget class="QSpinBox" name="spinBox_RayonCanneC2_4">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>121</width>
+           <height>41</height>
+          </rect>
+         </property>
+         <property name="buttonSymbols">
+          <enum>QAbstractSpinBox::ButtonSymbols::UpDownArrows</enum>
+         </property>
+        </widget>
+       </widget>
+       <widget class="QWidget" name="afficheur_16" native="true">
+        <property name="geometry">
+         <rect>
+          <x>300</x>
+          <y>30</y>
+          <width>161</width>
+          <height>61</height>
+         </rect>
+        </property>
+        <widget class="QLabel" name="label_40">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>109</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Tension effective Arc</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_41">
+         <property name="geometry">
+          <rect>
+           <x>130</x>
+           <y>40</y>
+           <width>31</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>KV</string>
+         </property>
+        </widget>
+        <widget class="QLCDNumber" name="lcdNumber_15">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>20</y>
+           <width>121</width>
+           <height>41</height>
+          </rect>
+         </property>
+         <property name="smallDecimalPoint">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </widget>
+       <widget class="QWidget" name="afficheur_17" native="true">
+        <property name="geometry">
+         <rect>
+          <x>300</x>
+          <y>100</y>
+          <width>161</width>
+          <height>61</height>
+         </rect>
+        </property>
+        <widget class="QLabel" name="label_42">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>103</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Courant effectif Arc</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_60">
+         <property name="geometry">
+          <rect>
+           <x>130</x>
+           <y>40</y>
+           <width>31</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>mA</string>
+         </property>
+        </widget>
+        <widget class="QLCDNumber" name="lcdNumber_16">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>20</y>
+           <width>121</width>
+           <height>41</height>
+          </rect>
+         </property>
+         <property name="smallDecimalPoint">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </widget>
+       <widget class="QDial" name="dial_DebitGaz">
+        <property name="geometry">
+         <rect>
+          <x>310</x>
+          <y>190</y>
+          <width>71</width>
+          <height>81</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_27">
+        <property name="geometry">
+         <rect>
+          <x>310</x>
+          <y>260</y>
+          <width>71</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="layoutDirection">
+         <enum>Qt::LayoutDirection::LeftToRight</enum>
+        </property>
+        <property name="autoFillBackground">
+         <bool>false</bool>
+        </property>
+        <property name="text">
+         <string>Débit gaz ml/min</string>
+        </property>
+        <property name="scaledContents">
+         <bool>false</bool>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignCenter</set>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QWidget" name="afficheur_18" native="true">
+        <property name="geometry">
+         <rect>
+          <x>60</x>
+          <y>250</y>
+          <width>161</width>
+          <height>61</height>
+         </rect>
+        </property>
+        <widget class="QLabel" name="label_61">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>131</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Courant effectif Filament</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_62">
+         <property name="geometry">
+          <rect>
+           <x>130</x>
+           <y>40</y>
+           <width>31</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>mA</string>
+         </property>
+        </widget>
+        <widget class="QLCDNumber" name="lcdNumber_CourantEffFilament">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>20</y>
+           <width>121</width>
+           <height>41</height>
+          </rect>
+         </property>
+         <property name="smallDecimalPoint">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </widget>
+       <widget class="QWidget" name="numInput_8" native="true">
+        <property name="geometry">
+         <rect>
+          <x>60</x>
+          <y>180</y>
+          <width>145</width>
+          <height>61</height>
+         </rect>
+        </property>
+        <widget class="QLabel" name="label_68">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>91</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Courant Filament</string>
+         </property>
+        </widget>
+        <widget class="QSpinBox" name="spinBox_CourantFilament">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>20</y>
+           <width>121</width>
+           <height>41</height>
+          </rect>
+         </property>
+         <property name="buttonSymbols">
+          <enum>QAbstractSpinBox::ButtonSymbols::UpDownArrows</enum>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_69">
+         <property name="geometry">
+          <rect>
+           <x>130</x>
+           <y>40</y>
+           <width>15</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>µA</string>
+         </property>
+        </widget>
+       </widget>
+      </widget>
+      <widget class="QLabel" name="label_64">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>37</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Source</string>
        </property>
       </widget>
      </widget>
@@ -918,6 +1305,117 @@
          </property>
         </widget>
        </widget>
+       <widget class="QWidget" name="afficheur_4" native="true">
+        <property name="geometry">
+         <rect>
+          <x>100</x>
+          <y>40</y>
+          <width>145</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <widget class="QLabel" name="label_45">
+         <property name="geometry">
+          <rect>
+           <x>130</x>
+           <y>10</y>
+           <width>15</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>µA</string>
+         </property>
+        </widget>
+        <widget class="QLCDNumber" name="lcdNumber_4">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>111</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="smallDecimalPoint">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </widget>
+       <widget class="QWidget" name="afficheur_5" native="true">
+        <property name="geometry">
+         <rect>
+          <x>100</x>
+          <y>80</y>
+          <width>145</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <widget class="QLabel" name="label_46">
+         <property name="geometry">
+          <rect>
+           <x>130</x>
+           <y>10</y>
+           <width>15</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>µA</string>
+         </property>
+        </widget>
+        <widget class="QLCDNumber" name="lcdNumber_5">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>111</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="autoFillBackground">
+          <bool>false</bool>
+         </property>
+         <property name="smallDecimalPoint">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </widget>
+       <widget class="QWidget" name="afficheur_6" native="true">
+        <property name="geometry">
+         <rect>
+          <x>100</x>
+          <y>120</y>
+          <width>145</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <widget class="QLabel" name="label_47">
+         <property name="geometry">
+          <rect>
+           <x>130</x>
+           <y>10</y>
+           <width>15</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>µA</string>
+         </property>
+        </widget>
+        <widget class="QLCDNumber" name="lcdNumber_6">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>111</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="smallDecimalPoint">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </widget>
       </widget>
       <widget class="QLabel" name="label_21">
        <property name="geometry">
@@ -930,117 +1428,6 @@
        </property>
        <property name="text">
         <string>Cibles</string>
-       </property>
-      </widget>
-     </widget>
-     <widget class="QWidget" name="afficheur_4" native="true">
-      <property name="geometry">
-       <rect>
-        <x>120</x>
-        <y>80</y>
-        <width>145</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <widget class="QLabel" name="label_45">
-       <property name="geometry">
-        <rect>
-         <x>130</x>
-         <y>10</y>
-         <width>15</width>
-         <height>16</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>µA</string>
-       </property>
-      </widget>
-      <widget class="QLCDNumber" name="lcdNumber_4">
-       <property name="geometry">
-        <rect>
-         <x>0</x>
-         <y>0</y>
-         <width>111</width>
-         <height>31</height>
-        </rect>
-       </property>
-       <property name="smallDecimalPoint">
-        <bool>false</bool>
-       </property>
-      </widget>
-     </widget>
-     <widget class="QWidget" name="afficheur_5" native="true">
-      <property name="geometry">
-       <rect>
-        <x>120</x>
-        <y>120</y>
-        <width>145</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <widget class="QLabel" name="label_46">
-       <property name="geometry">
-        <rect>
-         <x>130</x>
-         <y>10</y>
-         <width>15</width>
-         <height>16</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>µA</string>
-       </property>
-      </widget>
-      <widget class="QLCDNumber" name="lcdNumber_5">
-       <property name="geometry">
-        <rect>
-         <x>0</x>
-         <y>0</y>
-         <width>111</width>
-         <height>31</height>
-        </rect>
-       </property>
-       <property name="autoFillBackground">
-        <bool>false</bool>
-       </property>
-       <property name="smallDecimalPoint">
-        <bool>false</bool>
-       </property>
-      </widget>
-     </widget>
-     <widget class="QWidget" name="afficheur_6" native="true">
-      <property name="geometry">
-       <rect>
-        <x>120</x>
-        <y>160</y>
-        <width>145</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <widget class="QLabel" name="label_47">
-       <property name="geometry">
-        <rect>
-         <x>130</x>
-         <y>10</y>
-         <width>15</width>
-         <height>16</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>µA</string>
-       </property>
-      </widget>
-      <widget class="QLCDNumber" name="lcdNumber_6">
-       <property name="geometry">
-        <rect>
-         <x>0</x>
-         <y>0</y>
-         <width>111</width>
-         <height>31</height>
-        </rect>
-       </property>
-       <property name="smallDecimalPoint">
-        <bool>false</bool>
        </property>
       </widget>
      </widget>
