@@ -1,1 +1,2 @@
 affected_files.txt
+scripts/deviceLibs/picoDevices.py

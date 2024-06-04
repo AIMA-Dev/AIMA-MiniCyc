@@ -30,3 +30,4 @@ def get_pico_values():
     values = device.get_values()
     device.close()
     return values
+# Développé avec ❤️ par : www.noasecond.com.
