@@ -4,6 +4,8 @@
 
 Industrial application to control and monitor the "MiniCyc" particle accelerator (Cyclotron) designed by AIMA Developpement
 
+Uses [AutoCopyright-v1.0](https://github.com/YoruKiwi/AutoCopyright)
+
 ## Setup
 
 To run the MiniCyc application, follow these steps:
