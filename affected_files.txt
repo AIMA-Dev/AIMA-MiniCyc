@@ -1,5 +1,0 @@
-affected_files.txt
-after_files.txt
-before_files.txt
-main.py
-scripts/deviceLibs/picoDevices.py
