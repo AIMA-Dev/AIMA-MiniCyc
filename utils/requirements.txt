@@ -2,3 +2,4 @@ matplotlib
 PyQt5
 pyvisa
 PySide6
+PythonQwt
