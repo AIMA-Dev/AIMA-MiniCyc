@@ -7,8 +7,19 @@ from scripts.settings import Settings
 from scripts.logger import log_values, log_action
 from scripts.devicesLink import list_all_devices
 from datetime import datetime
-import scripts.realTimePlot as realTimePlot
-from scripts.deviceLibs.picoDevices import get_pico_values
+import scripts.realTimePlotting as realTimePlotting
+import ctypes
+import numpy as np
+from picosdk.ps2000a import ps2000a as ps
+from picosdk.functions import adc2mV, assert_pico_ok
+import time
+from scripts.deviceLibs.picoDevices import open_pico, get_value
+import threading
+import datetime
+import time
+import threading
+import sys
+import numpy as np
 
 
 def set_app_user_model_id(app_id):
@@ -129,20 +140,23 @@ def bind_settings(MainWindow):
 
 def bind_values_to_log(MainWindow):
     timer = QTimer(MainWindow)
-    spinBox_logFrequency = MainWindow.findChild(QtWidgets.QSpinBox, "spinBox_logFrequency")
+    spinBox_logFrequency = MainWindow.findChild(
+        QtWidgets.QSpinBox, "spinBox_logFrequency")
     logFrequencyInMS = spinBox_logFrequency.value() * 1000  # Convert to milliseconds
     timer.setInterval(logFrequencyInMS)
-    spinBox_fileSizeLimit = MainWindow.findChild(QtWidgets.QSpinBox, "spinBox_fileSizeLimit")
+    spinBox_fileSizeLimit = MainWindow.findChild(
+        QtWidgets.QSpinBox, "spinBox_fileSizeLimit")
     fileSizeLimit = spinBox_fileSizeLimit.value()
 
     def log_values_periodically():
-        spinBox_RayonCanneC1 = MainWindow.findChild(QtWidgets.QSpinBox, "spinBox_RayonCanneC1")
-        spinBox_RayonCanneC2 = MainWindow.findChild(QtWidgets.QSpinBox, "spinBox_RayonCanneC2")
+        spinBox_RayonCanneC1 = MainWindow.findChild(
+            QtWidgets.QSpinBox, "spinBox_RayonCanneC1")
+        spinBox_RayonCanneC2 = MainWindow.findChild(
+            QtWidgets.QSpinBox, "spinBox_RayonCanneC2")
         values_to_log = [
-            datetime.now().strftime("%H:%M:%S"),
+            datetime.datetime.now().strftime("%H:%M:%S"),
             spinBox_RayonCanneC1.value(),
-            spinBox_RayonCanneC2.value(),
-            get_pico_values()
+            spinBox_RayonCanneC2.value()
         ]
         log_values(values_to_log, fileSizeLimit)
 
@@ -215,7 +229,7 @@ def refresh_ports():
     Returns:
         None
     """
-    listWidget_PortList = MainWindow.findChild(
+    listWidget_PortList = main_window.findChild(
         QtWidgets.QListView, "listWidget_PortList")
     listWidget_PortList.clear()
     item = QtWidgets.QListWidgetItem("Refreshing...")
@@ -231,60 +245,73 @@ def refresh_ports():
             item = QtWidgets.QListWidgetItem(port)
             listWidget_PortList.addItem(item)
 
+def update_data(plot):
+    """
+    Updates the data for the given plot.
+
+    Args:
+        plot: The plot object to update.
+
+    Returns:
+        None
+    """
+    settings = Settings()
+    while plot.running:
+        plot.add_datas([get_value('PS2000A_CHANNEL_A')])
+        freq = float(settings.read_from_settings_file('logFrequency'))
+        time.sleep(freq)
+
+
+def plotting(parent, title, num_of_lines, legend_labels):
+    """
+    Create a real-time plotting widget and start a separate thread to update the data.
+
+    Args:
+        parent: The parent widget.
+        title: The title of the plot.
+        num_of_lines: The number of lines to be plotted.
+        legend_labels: The labels for the legend.
+
+    Returns:
+        None
+    """
+    plot = realTimePlotting.RealTimePlot(parent, title, num_of_lines, legend_labels)
+    data_thread = threading.Thread(target=update_data, args=(plot,))
+    data_thread.start()
+    layout = QtWidgets.QVBoxLayout()
+    parent.setLayout(layout)
+    layout.addWidget(plot)
 
 if __name__ == "__main__":
     set_app_user_model_id("aima.minicyc")
     app = QtWidgets.QApplication([])
-    MainWindow = loadUiWidget("GUI.ui")
-    MainWindow.setWindowTitle("MiniCyc")
+    main_window = loadUiWidget("GUI.ui")
+    main_window.setWindowTitle("MiniCyc")
     app_icon = QtGui.QIcon("assets/icon.ico")
     app.setWindowIcon(app_icon)
-    MainWindow.showFullScreen()
-    MainWindow.showMaximized()
-
-    # Resize tabWidget and set the last tab as the current tab
-    tabWidget = MainWindow.findChild(QtWidgets.QTabWidget, "tabWidget")
-    tabWidget.resize(QtWidgets.QApplication.primaryScreen().availableSize())
-    tabWidget.resize(MainWindow.width(), int(
-        QtWidgets.QApplication.primaryScreen().availableSize().height() * 0.95))
+    main_window.showFullScreen()
+    main_window.showMaximized()
+    tabWidget = main_window.findChild(QtWidgets.QTabWidget, "tabWidget")
     tabWidget.setCurrentIndex(tabWidget.count() - 1)
 
     # Settings
     settings = Settings()
-    load_settings(MainWindow)
-    bind_settings(MainWindow)
+    load_settings(main_window)
+    bind_settings(main_window)
 
     # Logger
-    bind_actions_to_log(MainWindow)
-    bind_values_to_log(MainWindow)
+    bind_actions_to_log(main_window)
+    bind_values_to_log(main_window)
 
     # Devices
     refresh_ports()
-    pushButton_Refresh = MainWindow.findChild(
+    pushButton_Refresh = main_window.findChild(
         QtWidgets.QPushButton, "pushButton_Refresh")
     pushButton_Refresh.clicked.connect(refresh_ports)
 
     # realTimePlot
-    # Vacuum pump
-    plot1 = realTimePlot.RealTimePlot("Plot 1", num_lines=2)
-    plot1.start_animation()
-    figure = plot1.figure
-    listWidget_vacuum = MainWindow.findChild(
-        QtWidgets.QListWidget, "listWidget_vacuum")
-    item = QtWidgets.QListWidgetItem()
-    item.setSizeHint(QtCore.QSize(0, 500))
-    listWidget_vacuum.addItem(item)
-    listWidget_vacuum.setItemWidget(item, figure.canvas)
-    # Magnet
-    plot2 = realTimePlot.RealTimePlot("Plot 2", num_lines=1)
-    plot2.start_animation()
-    figure = plot2.figure
-    listWidget_magnet = MainWindow.findChild(
-        QtWidgets.QListWidget, "listWidget_magnet")
-    item = QtWidgets.QListWidgetItem()
-    item.setSizeHint(QtCore.QSize(0, 500))
-    listWidget_magnet.addItem(item)
-    listWidget_magnet.setItemWidget(item, figure.canvas)
+    open_pico()
+    listWidget_vacuum = main_window.findChild(QtWidgets.QWidget, "listWidget_vacuum")
+    plotting(listWidget_vacuum, "Pompe à vide", 1, ["Channel A"])
 
     sys.exit(app.exec())
-# Développé avec ❤️ par : www.noasecond.com.
