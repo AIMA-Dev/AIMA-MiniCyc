@@ -7,7 +7,7 @@ Industrial application to control and monitor the "MiniCyc" particle accelerator
 Uses [AutoCopyright-v1.0](https://github.com/YoruKiwi/AutoCopyright)
 
 
-![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/YoruKiwi/AIMA-MiniCyc/codeql.yml)
+![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/YoruKiwi/AIMA-MiniCyc/codeql.yml?label=CI-Security)
 
 
 ## Setup
