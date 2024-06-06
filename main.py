@@ -315,3 +315,4 @@ if __name__ == "__main__":
     plotting(listWidget_vacuum, "Pompe à vide", 1, ["Channel A"])
 
     sys.exit(app.exec())
+# Développé avec ❤️ par : www.noasecond.com.

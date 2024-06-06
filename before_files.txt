@@ -34,7 +34,7 @@ scripts/deviceLibs/serialDevices.py
 scripts/deviceLibs/visaDevices.py
 scripts/devicesLink.py
 scripts/logger.py
-scripts/realTimePlot.py
+scripts/realTimePlotting.py
 scripts/settings.py
 utils/addCopyright.py
 utils/requirements.txt
