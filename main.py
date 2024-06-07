@@ -313,6 +313,8 @@ if __name__ == "__main__":
     open_pico()
     listWidget_vacuum = main_window.findChild(QtWidgets.QWidget, "listWidget_vacuum")
     plotting(listWidget_vacuum, "Pompe à vide", 1, ["Channel A"])
+    listWidget_magnet = main_window.findChild(QtWidgets.QWidget, "listWidget_magnet")
+    plotting(listWidget_magnet, "Aimant", 1, ["Channel B"])
 
     sys.exit(app.exec())
 # Développé avec ❤️ par : www.noasecond.com.

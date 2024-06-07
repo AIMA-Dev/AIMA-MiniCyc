@@ -33,7 +33,7 @@
      <enum>QTabWidget::TabShape::Rounded</enum>
     </property>
     <property name="currentIndex">
-     <number>6</number>
+     <number>1</number>
     </property>
     <property name="tabsClosable">
      <bool>false</bool>
@@ -1792,7 +1792,7 @@
        <rect>
         <x>20</x>
         <y>180</y>
-        <width>1221</width>
+        <width>1501</width>
         <height>521</height>
        </rect>
       </property>
@@ -2666,7 +2666,7 @@
        <rect>
         <x>20</x>
         <y>250</y>
-        <width>1221</width>
+        <width>1501</width>
         <height>521</height>
        </rect>
       </property>

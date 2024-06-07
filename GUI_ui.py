@@ -516,7 +516,7 @@ class Ui_MainWindow(object):
         self.label_3.setGeometry(QRect(0, 0, 161, 16))
         self.listWidget_magnet = QListWidget(self.Aimant)
         self.listWidget_magnet.setObjectName(u"listWidget_magnet")
-        self.listWidget_magnet.setGeometry(QRect(20, 180, 1221, 521))
+        self.listWidget_magnet.setGeometry(QRect(20, 180, 1501, 521))
         self.listWidget_magnet.setFrameShape(QFrame.Shape.Box)
         self.tabWidget.addTab(self.Aimant, "")
         self.RF = QWidget()
@@ -759,7 +759,7 @@ class Ui_MainWindow(object):
         self.label_53.setGeometry(QRect(0, 0, 161, 16))
         self.listWidget_vacuum = QListWidget(self.Vide)
         self.listWidget_vacuum.setObjectName(u"listWidget_vacuum")
-        self.listWidget_vacuum.setGeometry(QRect(20, 250, 1221, 521))
+        self.listWidget_vacuum.setGeometry(QRect(20, 250, 1501, 521))
         self.listWidget_vacuum.setFrameShape(QFrame.Shape.Box)
         self.Container_9 = QWidget(self.Vide)
         self.Container_9.setObjectName(u"Container_9")
@@ -935,7 +935,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.tabWidget.setCurrentIndex(6)
+        self.tabWidget.setCurrentIndex(1)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
