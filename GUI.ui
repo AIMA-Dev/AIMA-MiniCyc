@@ -33,7 +33,7 @@
      <enum>QTabWidget::TabShape::Rounded</enum>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>5</number>
     </property>
     <property name="tabsClosable">
      <bool>false</bool>
@@ -2946,21 +2946,299 @@
      <attribute name="title">
       <string>Eau</string>
      </attribute>
-     <widget class="QLabel" name="label_23">
+     <widget class="QWidget" name="afficheur_31" native="true">
       <property name="geometry">
        <rect>
-        <x>630</x>
-        <y>130</y>
-        <width>601</width>
-        <height>531</height>
+        <x>70</x>
+        <y>70</y>
+        <width>161</width>
+        <height>61</height>
        </rect>
       </property>
-      <property name="text">
-       <string/>
+      <widget class="QLabel" name="label_107">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>103</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Débit Source</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_108">
+       <property name="geometry">
+        <rect>
+         <x>130</x>
+         <y>40</y>
+         <width>31</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>L/min</string>
+       </property>
+      </widget>
+      <widget class="QLCDNumber" name="lcdNumber_DebitArgon_12">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>20</y>
+         <width>121</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="smallDecimalPoint">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="afficheur_32" native="true">
+      <property name="geometry">
+       <rect>
+        <x>270</x>
+        <y>70</y>
+        <width>161</width>
+        <height>61</height>
+       </rect>
       </property>
-      <property name="pixmap">
-       <pixmap resource="assets/Eau.qrc">:/newPrefix/Schema Eau.png</pixmap>
+      <widget class="QLabel" name="label_109">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>103</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Débit LEBT</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_110">
+       <property name="geometry">
+        <rect>
+         <x>130</x>
+         <y>40</y>
+         <width>31</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>L/min</string>
+       </property>
+      </widget>
+      <widget class="QLCDNumber" name="lcdNumber_DebitArgon_13">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>20</y>
+         <width>121</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="smallDecimalPoint">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="afficheur_33" native="true">
+      <property name="geometry">
+       <rect>
+        <x>70</x>
+        <y>190</y>
+        <width>161</width>
+        <height>61</height>
+       </rect>
       </property>
+      <widget class="QLabel" name="label_111">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>103</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Débit Bobine</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_112">
+       <property name="geometry">
+        <rect>
+         <x>130</x>
+         <y>40</y>
+         <width>31</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>L/min</string>
+       </property>
+      </widget>
+      <widget class="QLCDNumber" name="lcdNumber_DebitArgon_14">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>20</y>
+         <width>121</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="smallDecimalPoint">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="afficheur_34" native="true">
+      <property name="geometry">
+       <rect>
+        <x>490</x>
+        <y>70</y>
+        <width>161</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <widget class="QLabel" name="label_113">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>87</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Débit Déflecteur</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_114">
+       <property name="geometry">
+        <rect>
+         <x>130</x>
+         <y>40</y>
+         <width>31</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>L/min</string>
+       </property>
+      </widget>
+      <widget class="QLCDNumber" name="lcdNumber_DebitArgon_15">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>20</y>
+         <width>121</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="smallDecimalPoint">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="afficheur_35" native="true">
+      <property name="geometry">
+       <rect>
+        <x>490</x>
+        <y>190</y>
+        <width>161</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <widget class="QLabel" name="label_115">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>103</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Débit Inflecteur</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_116">
+       <property name="geometry">
+        <rect>
+         <x>130</x>
+         <y>40</y>
+         <width>31</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>L/min</string>
+       </property>
+      </widget>
+      <widget class="QLCDNumber" name="lcdNumber_DebitArgon_16">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>20</y>
+         <width>121</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="smallDecimalPoint">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="afficheur_36" native="true">
+      <property name="geometry">
+       <rect>
+        <x>270</x>
+        <y>190</y>
+        <width>161</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <widget class="QLabel" name="label_117">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>103</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Débit RF</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_118">
+       <property name="geometry">
+        <rect>
+         <x>130</x>
+         <y>40</y>
+         <width>31</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>L/min</string>
+       </property>
+      </widget>
+      <widget class="QLCDNumber" name="lcdNumber_DebitArgon_17">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>20</y>
+         <width>121</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="smallDecimalPoint">
+        <bool>false</bool>
+       </property>
+      </widget>
      </widget>
     </widget>
     <widget class="QWidget" name="Paramtres">
