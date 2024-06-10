@@ -22,20 +22,6 @@ import sys
 import numpy as np
 
 
-def set_app_user_model_id(app_id):
-    """
-    Sets the current process explicit AppUserModelID.
-
-    Parameters:
-    - app_id (str): The AppUserModelID to set.
-
-    Returns:
-    None
-    """
-    if os.name == 'nt':
-        ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID(app_id)
-
-
 def loadUiWidget(uifilename, parent=None):
     """
     Loads a UI file and returns the corresponding widget.
@@ -283,7 +269,8 @@ def plotting(parent, title, num_of_lines, legend_labels):
     layout.addWidget(plot)
 
 if __name__ == "__main__":
-    set_app_user_model_id("aima.minicyc")
+    if os.name == 'nt':
+        ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID("aima.minicyc")
     app = QtWidgets.QApplication([])
     main_window = loadUiWidget("GUI.ui")
     main_window.setWindowTitle("MiniCyc")
@@ -310,11 +297,14 @@ if __name__ == "__main__":
     pushButton_Refresh.clicked.connect(refresh_ports)
 
     # realTimePlot
-    open_pico()
-    listWidget_vacuum = main_window.findChild(QtWidgets.QWidget, "listWidget_vacuum")
-    plotting(listWidget_vacuum, "Pompe à vide", 1, ["Channel A"])
-    listWidget_magnet = main_window.findChild(QtWidgets.QWidget, "listWidget_magnet")
-    plotting(listWidget_magnet, "Aimant", 1, ["Channel B"])
+    try:
+        open_pico()
+        listWidget_vacuum = main_window.findChild(QtWidgets.QWidget, "listWidget_vacuum")
+        plotting(listWidget_vacuum, "Pompe à vide", 1, ["Channel A"])
+        listWidget_magnet = main_window.findChild(QtWidgets.QWidget, "listWidget_magnet")
+        plotting(listWidget_magnet, "Aimant", 1, ["Channel B"])
+    except Exception as e:
+        print("No pico device detected : "+str(e))
 
     sys.exit(app.exec())
 # Développé avec ❤️ par : www.noasecond.com.
