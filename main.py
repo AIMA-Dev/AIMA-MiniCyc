@@ -307,4 +307,3 @@ if __name__ == "__main__":
         print("No pico device detected : "+str(e))
 
     sys.exit(app.exec())
-# Développé avec ❤️ par : www.noasecond.com.

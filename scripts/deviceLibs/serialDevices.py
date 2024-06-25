@@ -14,4 +14,3 @@ def get_serial_list():
     for port in ports:
         available_ports.append(port.device)
     return available_ports
-# Développé avec ❤️ par : www.noasecond.com.

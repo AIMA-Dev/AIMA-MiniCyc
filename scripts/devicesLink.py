@@ -23,4 +23,3 @@ def list_all_devices():
     devices += get_serial_list()
 
     return devices
-# Développé avec ❤️ par : www.noasecond.com.

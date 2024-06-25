@@ -53,4 +53,3 @@ echo [STEP 6/6] Opening Grafana...
 start http://localhost:3000
 
 @pause
-:: Développé avec ❤️ par : www.noasecond.com.

@@ -146,4 +146,3 @@ def get_latest_csv_file(directory):
                 latest_time = file_time
 
     return latest_file
-# Développé avec ❤️ par : www.noasecond.com.

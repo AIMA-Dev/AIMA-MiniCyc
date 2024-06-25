@@ -96,4 +96,3 @@ class Settings:
                     if s == setting:
                         return True
         return False
-# Développé avec ❤️ par : www.noasecond.com.
