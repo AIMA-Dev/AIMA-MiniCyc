@@ -14,3 +14,4 @@ def get_serial_list():
     for port in ports:
         available_ports.append(port.device)
     return available_ports
+# © AIMA DEVELOPPEMENT 2024

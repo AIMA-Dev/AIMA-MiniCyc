@@ -96,3 +96,4 @@ class Settings:
                     if s == setting:
                         return True
         return False
+# © AIMA DEVELOPPEMENT 2024

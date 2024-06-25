@@ -23,3 +23,4 @@ def list_all_devices():
     devices += get_serial_list()
 
     return devices
+# © AIMA DEVELOPPEMENT 2024

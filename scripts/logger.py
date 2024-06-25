@@ -146,3 +146,4 @@ def get_latest_csv_file(directory):
                 latest_time = file_time
 
     return latest_file
+# © AIMA DEVELOPPEMENT 2024

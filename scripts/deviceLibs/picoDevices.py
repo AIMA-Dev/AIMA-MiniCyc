@@ -118,3 +118,4 @@ def get_pico_list():
         device_list.append(
             "PicoScope " + device.variant + " with serial " + device.serial)
     return device_list
+# © AIMA DEVELOPPEMENT 2024

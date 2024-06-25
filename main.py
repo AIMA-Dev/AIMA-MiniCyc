@@ -307,3 +307,4 @@ if __name__ == "__main__":
         print("No pico device detected : "+str(e))
 
     sys.exit(app.exec())
+# © AIMA DEVELOPPEMENT 2024
